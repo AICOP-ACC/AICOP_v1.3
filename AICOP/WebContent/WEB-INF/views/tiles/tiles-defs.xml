@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="login-template" template="/WEB-INF/views/tiles/loginLayout.jsp">
+		<put-attribute name="maincontent" value="" />
+	</definition>
+
+	<!-- <definition name="ajax-template" template="/WEB-INF/tiles/emptyLayout.jsp"> 
+		<put-attribute name="maincontent" value="" /> </definition> <definition name="ajax/framework/*" 
+		extends="ajax-template"> <put-attribute name="maincontent" value="/framework/views/{1}" 
+		/> </definition> <definition name="ajax/*/*" extends="ajax-template"> <put-attribute 
+		name="maincontent" value="/WEB-INF/views/{1}/{2}" /> </definition> <definition 
+		name="login/*" extends="login-template"> <put-attribute name="maincontent" 
+		value="/WEB-INF/views/login/{1}" /> </definition> -->
+
+
+	<definition name="begin" extends="login-template">
+		<put-attribute name="maincontent" value="/WEB-INF/views/login/login.jsp" />
+	</definition>
+	<definition name="home-template" template="/WEB-INF/views/tiles/templateLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp" />
+		<put-attribute name="leftNav"
+			value="/WEB-INF/views/template/leftNav.jsp" />
+		<put-attribute name="topNav" value="/WEB-INF/views/template/topNav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
+		<put-attribute name="maincontent" value="" />
+	</definition>
+
+
+	<!-- <definition name="ordermgmt/*" extends="home-template"> <put-attribute 
+		name="maincontent" value="/WEB-INF/views/ordermgmt/{1}" /> </definition> 
+		Soundariya OPWeb: 6-July-2018 <definition name="ecom/*" extends="home-template"> 
+		<put-attribute name="maincontent" value="/WEB-INF/views/ecom/{1}" /> </definition> 
+		AR: 29-July-2016 <definition name="admin/*" extends="home-template"> <put-attribute 
+		name="maincontent" value="/WEB-INF/views/admin/{1}" /> </definition> -->
+	<!-- <definition name="login/*" extends="login-template"> <put-attribute 
+		name="maincontent" value="/WEB-INF/views/login/{1}" /> </definition> -->
+	<definition name="common/*" extends="home-template">
+		<put-attribute name="maincontent" value="/WEB-INF/views/common/{1}" />
+	</definition>
+
+
+	<!-- <definition name="*/*" extends="main-template"> <put-attribute name="maincontent" 
+		value="/WEB-INF/views/{1}/{2}" /> </definition> AR: 15-August-2017 <definition 
+		name="admin/grp/*" extends="home-template"> <put-attribute name="maincontent" 
+		value="/WEB-INF/views/admin/grp/{1}" /> </definition> AR: 17-August-2017 
+		<definition name="admin/activity/*" extends="home-template"> <put-attribute 
+		name="maincontent" value="/WEB-INF/views/admin/activity/{1}" /> </definition> 
+		AR: 25-August-2017 <definition name="admin/attribLink/*" extends="home-template"> 
+		<put-attribute name="maincontent" value="/WEB-INF/views/admin/attribLink/{1}" 
+		/> </definition> AR: 25-August-2017 <definition name="admin/attrib/*" extends="home-template"> 
+		<put-attribute name="maincontent" value="/WEB-INF/views/admin/attrib/{1}" 
+		/> </definition> AR: 29-August-2017 <definition name="admin/configTables/*" 
+		extends="home-template"> <put-attribute name="maincontent" value="/WEB-INF/views/admin/configTables/{1}" 
+		/> </definition> AR: 29-August-2017 <definition name="admin/grpRouting/*" 
+		extends="home-template"> <put-attribute name="maincontent" value="/WEB-INF/views/admin/grpRouting/{1}" 
+		/> </definition> AR: 30-August-2017 <definition name="personalization/group/*" 
+		extends="home-template"> <put-attribute name="maincontent" value="/WEB-INF/views/personalization/group/{1}" 
+		/> </definition> <definition name="personalization/user/*" extends="home-template"> 
+		<put-attribute name="maincontent" value="/WEB-INF/views/personalization/user/{1}" 
+		/> </definition> -->
+
+
+
+</tiles-definitions>

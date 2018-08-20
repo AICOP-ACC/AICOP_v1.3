@@ -1,0 +1,141 @@
+/* body {
+  margin: 50px;
+} */
+a:hover, a:visited, a:link, a:active {
+	text-decoration: none;
+}
+
+.controls {
+	margin-bottom: 10px;
+}
+
+.collapse-group {
+	padding: 10px;
+	/* border: 1px solid darkgrey;*/
+	margin-bottom: 10px;
+}
+
+.aicop-panel-title .trigger:before {
+	content: '\e082';
+	font-family: inherit;
+	font-color: white;
+	background-color: #34495ef0;
+	vertical-align: text-bottom;
+}
+
+.aicop-panel-title .trigger.collapsed:before {
+	content: '\e081';
+}
+
+.panel>.aicop-panel-heading {
+	padding: 1px 7px;
+	border-bottom: 0px solid transparent;
+}
+
+/* .call-initiate{
+	width: 46px;
+    height: 44px;
+	background-image: url("resources/images/call-initiate.jpg");
+	background-repeat: no-repeat;
+}
+
+.call-terminate{
+	width: 46px;
+    	height: 44px;
+	background-image: url("resources/images/call-terminate.jpg");
+	background-repeat: no-repeat;
+}
+
+.share-bridge{
+	width: 46px;
+    	height: 44px;
+	background-image: url("resources/images/share-bridge.jpg");
+	background-repeat: no-repeat;
+} */
+.conf-images {
+	width: 46px;
+	height: 44px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.mouse-point:hover {
+	cursor: pointer;
+}
+
+.icon-prechecks-neutral, .icon-prechecks-success {
+	font-size: 25px;
+	color: green;
+}
+
+.icon-prechecks-danger {
+	font-size: 25px;
+	color: red;
+}
+
+.icon-green {
+	color: green;
+}
+
+.icon-red {
+	color: red;
+}
+
+.icon-blue {
+	color: #337ab7;
+}
+
+.icon-large {
+	font-size: 40px;
+}
+
+.icon-embossed {
+	text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px
+		rgba(0, 0, 0, 0.8);
+}
+
+.aicop-padding-20 {
+	padding: 20px;
+}
+
+.aicop-padding-10 {
+	padding: 10px;
+}
+
+.aicop-padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
+.aicop-padding-left-10 {
+	padding: 10px;
+}
+
+.aicop-padding-top-10{
+	padding-top: 10px;
+}
+
+.aicop-padding-left-20 {
+	padding: 20px;
+}
+
+.icon-medium {
+	font-size: 30px;
+}
+
+
+#exapandedflowchart
+{
+	width: 125%;
+	height:225vh;
+	
+}
+#navigation
+{
+	padding-left: 10%;
+}
+
+span:HOVER {
+font-weight:bold;
+    text-decoration: underline;
+}
+}
