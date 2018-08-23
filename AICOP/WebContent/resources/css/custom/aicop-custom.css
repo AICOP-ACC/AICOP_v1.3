@@ -139,3 +139,10 @@ font-weight:bold;
     text-decoration: underline;
 }
 }
+
+.blink{
+		font-size: 12px;
+		font-weight: bold;
+		animation: blink 1s infinite;
+	 }
+	 

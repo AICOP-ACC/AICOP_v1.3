@@ -21,4 +21,14 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 	<bean id="notesHistoryDelegate" class="com.acc.delegate.impl.NotesHistoryDelegateImpl"></bean>
 	
+	
+	<bean class="com.acc.controller.NotificationController" scope="session">
+		<property name="notificationDelegate" ref="notificationDelegate"></property>
+
+	</bean>
+	<bean id="notificationDelegate" class="com.acc.delegate.impl.NotificationDelegateImpl"></bean>
+	
+	
+	
+	
 </beans>
