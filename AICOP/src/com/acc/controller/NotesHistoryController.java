@@ -4,8 +4,10 @@ import com.acc.delegate.NotesHistoryDelegate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,10 @@ import com.acc.bean.NotesBean;
 public class NotesHistoryController {
 
 	final static Logger logger = Logger.getLogger(NotesHistoryController.class);
+	
+	@Autowired
+    private HttpSession session;
+	
 	private NotesHistoryDelegate notesHistoryDelegate;
 	
 
@@ -27,14 +33,10 @@ public class NotesHistoryController {
 
 @RequestMapping(value="/notesHistory.do",method=RequestMethod.POST)
 public @ResponseBody NotesBean saveNotesHistory(@RequestBody String notesVal,HttpServletRequest request,HttpServletResponse response) {
-	System.out.println("inside notes history do-->"+notesVal);
 	
-	NotesBean notesBean = notesHistoryDelegate.saveNotesHistory(notesVal);
+	String loginId = session.getAttribute("result").toString();
 	
-	 System.out.println(notesBean.getNotes());
-	 System.out.println(notesBean.getOwner());
-	 System.out.println(notesBean.getTimestamp());
-	 System.out.println("inside notes history do-->end");
+	NotesBean notesBean = notesHistoryDelegate.saveNotesHistory(notesVal,loginId);
 	 return notesBean;
 	}
 }

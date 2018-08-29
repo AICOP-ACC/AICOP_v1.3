@@ -12,6 +12,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="loginDelegate" class="com.acc.delegate.impl.LoginDelegateImpl">
 		<property name="loginService" ref="loginService"></property>
 		<property name="notesHistoryService" ref="notesHistoryService"></property>
+		<property name="triageActionsService" ref="triageActionsService"></property>
 	</bean>
 	<bean id="loginService" class="com.acc.service.impl.LoginServiceImpl">
 	</bean>
@@ -21,4 +22,21 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 	<bean id="notesHistoryService" class="com.acc.service.impl.NotesHistoryServiceImpl">
 	</bean>
+	
+	
+	
+	<bean id="triageActionsDelegate" class="com.acc.delegate.impl.TriageActionsDelegateImpl">
+		<property name="triageActionsService" ref="triageActionsService"></property>
+	</bean>
+	<bean id="triageActionsService" class="com.acc.service.impl.TriageActionsServiceImpl">
+	</bean>
+	
+	<bean id="detailedDelegate" class="com.acc.delegate.impl.DetailedDelegateImpl">
+		<property name="detailedService" ref="detailedService"></property>
+	</bean>
+	<bean id="detailedService" class="com.acc.service.impl.DetailedServiceImpl">
+	</bean>
+	
+	
+	
 </beans>

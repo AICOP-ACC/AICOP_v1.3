@@ -11,7 +11,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 	<bean class="com.acc.controller.LoginController" scope="session">
 		<property name="loginDelegate" ref="loginDelegate"></property>
-
+		<property name="detailedDelegate" ref="detailedDelegate"></property>
 	</bean>
 	<bean id="loginDelegate" class="com.acc.delegate.impl.LoginDelegateImpl"></bean>
 	
@@ -20,5 +20,14 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 	</bean>
 	<bean id="notesHistoryDelegate" class="com.acc.delegate.impl.NotesHistoryDelegateImpl"></bean>
+	
+	
+	<bean class="com.acc.controller.TriageActionsController" scope="session">
+		<property name="triageActionsDelegate" ref="triageActionsDelegate"></property>
+
+	</bean>
+	<bean id="triageActionsDelegate" class="com.acc.delegate.impl.TriageActionsDelegateImpl"></bean>
+	
+	<bean id="detailedDelegate" class="com.acc.delegate.impl.DetailedDelegateImpl"></bean>
 	
 </beans>

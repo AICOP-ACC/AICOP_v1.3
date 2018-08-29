@@ -13,8 +13,14 @@
               <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
           <div class="ripple-container"></div>
         </button>
-        </div id="dashBoardTitle">
-			<a class="navbar-brand" href="#">Executive View</a>
+        </div>
+			<!-- <a class="navbar-brand" href="#">Executive View</a> -->
+			<div  id="attid" style="display:none;">
+				<a class="navbar-brand" href="#">Executive View</a>
+			</div>
+			<div  id="attiddetail" style="display:none;">
+				<a class="navbar-brand" href="#">Detailed View</a>
+			</div>
 		</div>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">

@@ -29,15 +29,17 @@
 							<div class="col-md-4">Special event/launches</div>
 
 							<div class="col-md-2">
-								<i
-									class="fa fa-arrow-circle-o-right circle-icon-g icon-prechecks-neutral"></i>
+								<!-- <i
+									class="fa fa-arrow-circle-o-right circle-icon-g icon-prechecks-neutral"></i> -->
+									<i	class="fa ${result1}"></i>
 							</div>
 							<div class="col-md-4">Recent Server Restart/Broken Network
 							</div>
 
 							<div class="col-md-2">
-								<i
-									class="fa fa-arrow-circle-o-right circle-icon-g icon-prechecks-neutral"></i>
+								<!-- <i
+									class="fa fa-arrow-circle-o-right circle-icon-g icon-prechecks-neutral"></i> -->
+									<i	class="fa ${result2}"></i>
 							</div>
 
 						</div>
@@ -46,14 +48,16 @@
 								<div class="col-md-4">SLA of the flow</div>
 	
 								<div class="col-md-2">
-									<i class="fa fa-thumbs-up circle-icon-g icon-prechecks-success"></i>
+									<!-- <i class="fa fa-thumbs-up circle-icon-g icon-prechecks-success"></i> -->
+									<i	class="fa ${result3}"></i>
 								</div>
 								
 								<div class="col-md-4">Ongoing Bulk submission in OPOM</div>
 	
 								<div class="col-md-2">
-									<i
-										class="fa fa-arrow-circle-o-right circle-icon-g icon-prechecks-neutral"></i>
+									<!-- <i
+										class="fa fa-arrow-circle-o-right circle-icon-g icon-prechecks-neutral"></i> -->
+										<i	class="fa ${result4}"></i>
 								</div>
 
 						</div>
@@ -62,12 +66,14 @@
 							<div class="col-md-4">New/Unexpected Errors</div>
 
 							<div class="col-md-2">
-								<i class="fa fa-thumbs-down circle-icon-r icon-prechecks-danger"></i>
+								<!-- <i class="fa fa-thumbs-down circle-icon-r icon-prechecks-danger"></i> -->
+								<i class="fa ${result5}"></i>
 							</div>
 							<div class="col-md-4">Long running DB queries</div>
 
 							<div class="col-md-2">
-								<i class="fa fa-thumbs-down circle-icon-r icon-prechecks-danger"></i>
+								<!-- <i class="fa fa-thumbs-down circle-icon-r icon-prechecks-danger"></i> -->
+								<i class="fa ${result6}"></i>
 							</div>
 
 						</div>
@@ -123,15 +129,15 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                    <p id="notesContent">Notes for Major - 1801040331
-                      </p>
+                     <p id="notesContent"><!-- Notes for Major - 1801040331 -->
+                      </p> 
 	                     <div class="swal2-content" style="display: block;">
 		                     <div class="form-group bmd-form-group"><input id="inputFieldNotes" placeholder="Type here..." type="text" class="form-control">
 		                     </div>
 	                     </div>
                     </div>
                     <div class="modal-footer">
-                     <button id="saveNotesBtn" type="button" class="btn btn-primary">Save changes</button> 
+                     <button id="saveNotesBtn" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button> 
                      <!--  <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close
 	                      <div class="ripple-container">
 		                      <div class="ripple-decorator ripple-on ripple-out" style="left: 15.0781px; top: 16px; background-color: rgb(244, 67, 54); transform: scale(8.50976);">
@@ -404,12 +410,12 @@
 		                      <ul class="nav nav-tabs" data-tabs="tabs">
 		                        <li class="nav-item">
 		                          <a class="nav-link active" href="#notesHistory" data-toggle="tab">
-		                            <i class="material-icons">event_note</i> Notes History
+		                            <i class="material-icons rotate-icon">event_note</i> Notes History
 		                          </a>
 		                        </li>
 		                        <li class="nav-item">
 		                          <a class="nav-link" href="#triageAction" data-toggle="tab">
-		                            <i class="material-icons">brightness_auto</i> Triage Action
+		                            <i class="material-icons rotate-icon">brightness_auto</i> Triage Action
 		                          </a>
 		                        </li>
 		                      </ul>
@@ -432,7 +438,7 @@
 							          </div>
 							          <div class="material-datatables">
 							            <div id="datatables_wrapper" class="dataTables_wrapper dt-bootstrap4">
-							            <div class="row">
+							            <!-- <div class="row">
 							            	<div class="col-sm-12 col-md-6">
 							            		<div class="dataTables_length" id="datatables_length">
 							            			<label>Show <select name="datatables_length" aria-controls="datatables" class="custom-select custom-select-sm form-control form-control-sm">
@@ -448,27 +454,31 @@
 							            		</div>
 							            	</div>
 							            </div>
-							            
+							             -->
 							            <div class="row">
-							            <div class="col-sm-12"><table id="notesHistoryTable" class="table table-striped table-no-bordered table-hover dataTable dtr-inline" cellspacing="0" width="100%" style="width: 100%;" role="grid" aria-describedby="datatables_info">
+							            <div class="col-sm-12">
+							            <table id="notesHistoryTable" class="table table-striped table-no-bordered table-hover dataTable dtr-inline" cellspacing="0" width="100%" style="width: 100%;" role="grid" aria-describedby="datatables_info">
 							            
 							              <thead>
-							                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 222px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Notes</th><th class="sorting" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 326px;" aria-label="Position: activate to sort column ascending">User</th><th class="sorting" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 168px;" aria-label="Office: activate to sort column ascending">Time Stamp</th></tr>
+							                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 222px;text-align: left;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Notes</th><th class="sorting" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 326px;" aria-label="Position: activate to sort column ascending">User</th><th class="sorting" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 168px;" aria-label="Office: activate to sort column ascending">Time Stamp</th></tr>
 							              </thead>
 							              <tfoot>
-							                <tr><th rowspan="1" colspan="1">Notes</th><th rowspan="1" colspan="1">User</th><th rowspan="1" colspan="1">Time Stamp</th></tr>
+							                <tr>
+							                <th rowspan="1" colspan="1" style="width: 222px;text-align: left;">Notes</th>
+							                <th rowspan="1" colspan="1" style="width: 326px;text-align: left;">User</th>
+							                <th rowspan="1" colspan="1" style="width: 168px;text-align: left;">Time Stamp</th></tr>
 							              </tfoot>
 							              <tbody>
 		 	
 										   <c:forEach items="${notesList}" var="notes">
 										   <tr>
-										   <td>
+										   <td style="text-align: left;">
 										   <c:out value="${notes.notes}"/>
 										   </td>
-										   <td>
+										   <td style="text-align: left;">
 										   <c:out value="${notes.owner}"/>
 										   </td>
-										   <td>
+										   <td style="text-align: left;">
 										   <c:out value="${notes.timestamp}"/>
 										   </td>
 										   </tr>
@@ -476,14 +486,253 @@
 										   </c:forEach>
 										   </tbody>
 							            </table>
-							            </div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="datatables_info" role="status" aria-live="polite">Showing 1 to 10 of 40 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_full_numbers" id="datatables_paginate"><ul class="pagination"><li class="paginate_button page-item first disabled" id="datatables_first"><a href="#" aria-controls="datatables" data-dt-idx="0" tabindex="0" class="page-link">First</a></li><li class="paginate_button page-item previous disabled" id="datatables_previous"><a href="#" aria-controls="datatables" data-dt-idx="1" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="datatables" data-dt-idx="2" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatables" data-dt-idx="3" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatables" data-dt-idx="4" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatables" data-dt-idx="5" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item next" id="datatables_next"><a href="#" aria-controls="datatables" data-dt-idx="6" tabindex="0" class="page-link">Next</a></li><li class="paginate_button page-item last" id="datatables_last"><a href="#" aria-controls="datatables" data-dt-idx="7" tabindex="0" class="page-link">Last</a></li></ul></div></div></div></div>
+							            </div>
+							            </div>
+							          <!--   <div class="row">
+								            <div class="col-sm-12 col-md-5"><div class="dataTables_info" id="datatables_info" role="status" aria-live="polite">Showing 1 to 10 of 40 entries
+								            </div>
+							            </div>
+							            <div class="col-sm-12 col-md-7">
+							            <div class="dataTables_paginate paging_full_numbers" id="datatables_paginate">
+							            <ul class="pagination">
+							            <li class="paginate_button page-item first disabled" id="datatables_first">
+							            <a href="#" aria-controls="datatables" data-dt-idx="0" tabindex="0" class="page-link">First</a>
+							            </li>
+							            <li class="paginate_button page-item previous disabled" id="datatables_previous">
+							            <a href="#" aria-controls="datatables" data-dt-idx="1" tabindex="0" class="page-link">Previous</a>
+							            </li>
+							            <li class="paginate_button page-item active">
+							            <a href="#" aria-controls="datatables" data-dt-idx="2" tabindex="0" class="page-link">1</a>
+							            </li>
+							            <li class="paginate_button page-item ">
+							            <a href="#" aria-controls="datatables" data-dt-idx="3" tabindex="0" class="page-link">2</a>
+							            </li>
+							            <li class="paginate_button page-item ">
+							            <a href="#" aria-controls="datatables" data-dt-idx="4" tabindex="0" class="page-link">3</a>
+							            </li>
+							            <li class="paginate_button page-item ">
+							            <a href="#" aria-controls="datatables" data-dt-idx="5" tabindex="0" class="page-link">4</a>
+							            </li>
+							            <li class="paginate_button page-item next" id="datatables_next">
+							            <a href="#" aria-controls="datatables" data-dt-idx="6" tabindex="0" class="page-link">Next</a>
+							            </li>
+							            <li class="paginate_button page-item last" id="datatables_last">
+							            <a href="#" aria-controls="datatables" data-dt-idx="7" tabindex="0" class="page-link">Last</a>
+							            </li>
+							            </ul>
+							            </div>
+							            </div>
+							            </div> -->
+							            </div>
 							          </div>
 							        </div>
 							        end content
 							      </div>    
 		                    </div>
 		                    <div class="tab-pane" id="triageAction">
-		                      <p> Triage actions have to be displayed</p>
+		                    <div class="card">
+		                    	<div class="card-header card-header-rose card-header-icon">
+							         
+							          <h4 class="card-title">Suggested Actions</h4>
+							        </div>
+		                    <div class="card-body">
+		                    	<div class="material-datatables">
+							            <div id="datatables_wrapper" class="dataTables_wrapper dt-bootstrap4">
+							            
+							            <div class="row">
+							             <input type="hidden" id="newActionsAddedHidden"/>
+							            <div class="col-sm-12">
+							            <table id="suggestedActionsTable" class="table table-striped" cellspacing="0" width="100%" style="width: 100%;" role="grid" aria-describedby="datatables_info">
+							            
+							              <thead>
+							                <tr role="row">
+							                <th class="text-center">Action No</th>
+											<th>Description</th>
+											<th>App Owner</th>
+											<th>Dependency</th>
+											<th>Occurrences</th>
+											<th>Success Percentage</th>
+											<th>Expected Duration</th>
+											<th>Add Action</th>
+							                </tr>
+							              </thead>
+							              
+							              <tbody>
+		 	
+										   <c:forEach items="${suggestedActionsList}" var="actions">
+										   <tr>
+										   <td class="text-center">
+										   <c:out value="${actions.actionId}"/>
+										   </td>
+										   <td id="${actions.actionId}_ActionPre">
+										   <c:out value="${actions.actionDesc}"/>
+										   </td>
+										   <td id="${actions.actionId}_OwnerPre">
+										   <c:out value="${actions.appOwner}"/>
+										   </td>
+										   <td>
+										   <c:out value="${actions.dependency}"/>
+										   </td>
+										   <td>
+										   <c:out value="${actions.occurrences}"/>
+										   </td>
+										   <td>
+										   <c:out value="${actions.successPercentage}"/>
+										   </td>
+										   <td id="${actions.actionId}_ExpectDurationPre">
+										   <c:out value="${actions.expectedDuration}"/>
+										   </td>
+										   <td class="td-actions">
+                    						<button id="${actions.actionId}_addActionBtn" type="button" rel="tooltip" class="add-action btn btn-success" data-original-title="" title="">
+                     						 	<i class="material-icons">add_circle</i>
+                    						</button>
+										   </td>
+										   
+										   </tr>
+										   
+										   </c:forEach>
+										   </tbody>
+							            </table>
+							            </div>
+							            </div>
+							            
+							            </div>
+							            
+							            </div>
+		                    
+		                    
+		                    </div>
+		                    
+		                    </div>
+		                    
+		                    <div class="card">
+		                    	<div class="card-header card-header-rose card-header-icon">
+							         
+							          <h4 class="card-title">Manual Actions</h4>
+							          
+							          <div class="pull-right">
+							          
+         
+		 <i id="addManualAction" class="fa fa-plus-square-o icon-green icon-large mouse-point icon-embossed"></i>
+		
+		 
+		 <i id="saveManualActions" class="fa fa-save icon-green icon-large mouse-point icon-embossed"></i> 
+							          </div>
+							        </div>
+		                    	<div class="card-body">
+		                    	<div class="material-datatables">
+							            <div id="datatables_wrapper" class="dataTables_wrapper dt-bootstrap4">
+							            <div class="row">
+							            <div class="col-sm-12">
+							            <div class="table-responsive">
+            <table id="manualActionsTable" class="">
+              <thead>
+                <tr>
+                  <th id="actionNoHeader" class="text-center" style="border:1px solid grey;">Action No</th>
+                  <th style="border:1px solid grey;">Description</th>
+                  <th style="border:1px solid grey;">Owner</th>
+                  <th style="border:1px solid grey;">Dependency</th>
+                  <th style="border:1px solid grey;">Expected Duration(min)</th>
+                  <th style="border:1px solid grey;">Status</th>
+                  <th style="border:1px solid grey;">Start Time</th>
+                  <th style="border:1px solid grey;">End Time</th>
+                  <th style="border:1px solid grey;">Actual Duration(min)</th>
+                  <th style="border:1px solid grey;">Outcome</th>
+                  <th id="deleteHeader" style="border:1px solid grey;">Delete</th> 
+                </tr>
+              </thead>
+              
+              <tbody>
+              				<c:forEach items="${manualActionsBeanList}" var="manualAction">
+										   <tr id="${manualAction.actionId}_actionRow">
+										   <td class="text-center" style="border:1px solid grey;">
+										   <c:out value="${manualAction.actionId}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_Action" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.actionDesc}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_Owner" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.appOwner}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_Dependency" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.dependency}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_ETC" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.expectedDuration}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_Status" style="border:1px solid grey;" contenteditable=true>
+										    <select id = "${manualAction.actionId}_actionStatus">
+										    <c:if test = "${manualAction.status == 'Not Started'}">
+										   	
+										   	<option selected>Not Started</option>
+										   	<option>In Progress</option>
+										   	<option>Completed</option>
+										   </c:if>
+										   <c:if test = "${manualAction.status == 'In Progress'}">
+										   	
+										   	<option>Not Started</option>
+										   	<option selected>In Progress</option>
+										   	<option>Completed</option>
+										   </c:if>
+										   <c:if test = "${manualAction.status == 'Completed'}">
+										   	
+										   	<option>Not Started</option>
+										   	<option>In Progress</option>
+										   	<option selected>Completed</option>
+										   </c:if> 
+										   </select>
+										   </td>
+										   <td id="${manualAction.actionId}_StartTime" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.startTime}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_EndTime" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.endTime}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_ActualDuration" style="border:1px solid grey;" contenteditable=true>
+										   <c:out value="${manualAction.actualDuration}"/>
+										   </td>
+										   <td id="${manualAction.actionId}_DependencyStatus" style="border:1px solid grey;" contenteditable=true>
+										  <%--  <c:out value="${manualAction.outcome}"/> --%>
+										   <select id = "${manualAction.actionId}_actionSuccess">
+											<c:if test = "${manualAction.outcome == '--Please Select--'}">
+											   	
+											   	<option selected>--Please Select--</option>
+											   	<option>Success</option>
+											   	<option>Failure</option>
+											   </c:if>
+											   <c:if test = "${manualAction.outcome == 'Success'}">
+											   	
+											   	<option>--Please Select--</option>
+											   	<option selected>Success</option>
+											   	<option>Failure</option>
+											   </c:if>
+											   <c:if test = "${manualAction.outcome == 'Failure'}">
+											   	
+											   	<option>--Please Select--</option>
+											   	<option>Success</option>
+											   	<option selected>Failure</option>
+											   </c:if> 
+											   </select>
+										   </td>
+										   <td class="td-actions" id="${manualAction.actionId}_removeAction" style="border:1px solid grey;" >
+											   <center>
+		                    						<a title="Remove Actions" style="padding: 5px; min-width:60px; height:48px;" id="removeActionBtn" class="">
+		                    							<i class="fa fa-minus-circle" style="font-size: 1.73em;color:red"></i>
+		                    						</a>
+	                    						</center>
+										   </td>
+										   
+										   </tr>
+										   
+							</c:forEach>
+              </tbody>
+          
+            </table>
+          </div>
+							            
+							            </div></div>
+		                    </div>
+		                      </div></div>
 		                    </div>
 		                    
 		                  </div>

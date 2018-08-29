@@ -31,9 +31,9 @@ public class NotesHistoryServiceImpl implements NotesHistoryService {
 
 
 	@Override
-	public NotesBean saveNotesHistory(String notesHist) {
+	public NotesBean saveNotesHistory(String notesHist,String loginId) {
 		 System.out.println("In saveNotesHistory delegateImpl");
-		return notesHistoryDao.saveNotesHistory(notesHist);
+		return notesHistoryDao.saveNotesHistory(notesHist,loginId);
 	}
 
 

@@ -16,10 +16,10 @@ public class NotesHistoryDelegateImpl implements NotesHistoryDelegate{
 	}
 
 	@Override
-	public NotesBean saveNotesHistory(String notesHist) {
+	public NotesBean saveNotesHistory(String notesHist,String loginId) {
 		
 		System.out.println("In saveNotesHistory delegateImpl");
-		return notesHistoryService.saveNotesHistory(notesHist);
+		return notesHistoryService.saveNotesHistory(notesHist,loginId);
 	}
 
 	@Override

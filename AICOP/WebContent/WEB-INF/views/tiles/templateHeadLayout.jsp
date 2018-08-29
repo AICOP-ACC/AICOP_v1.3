@@ -30,7 +30,8 @@
 <link href="resources/css/custom/aicop-custom.css" rel="stylesheet"
 	type="text/css" />
  	
-	
+<link href="resources/css/package/jquery.dataTables.min.css" rel="stylesheet"
+	type="text/css" />	
 
 
 <script src="resources/js/package/jquery.min.js" type="text/javascript"></script>

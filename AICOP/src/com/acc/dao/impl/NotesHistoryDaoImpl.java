@@ -36,34 +36,37 @@ public class NotesHistoryDaoImpl implements NotesHistoryDao{
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotesBean saveNotesHistory(String notesHist) {
+	public NotesBean saveNotesHistory(String notesHist,String loginId) {
 		NotesBean notesBean = new NotesBean();
 		boolean rUpdate = false;
 		System.out.println("inside saveNotesHistory daoimpl-->start");
 		// TODO Auto-generated method stub
 
 
-try {
-    
-    Configuration configuration = new Configuration();
-    System.out.println("configuration"+configuration);
-configuration.configure("hbm.cfg.xml");
-System.out.println("configuration-->"+configuration);
-ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();   
-
-System.out.println("serviceRegistry"+serviceRegistry);
- sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-
-   // return sessionFactory;
-}
-catch (Throwable ex) {
-//logger.error("Initial SessionFactory creation failed." + ex);
-throw new ExceptionInInitializerError(ex);
-}
-StringBuilder queryBuffer = new StringBuilder();
+	try {
+	    
+	    Configuration configuration = new Configuration();
+	    System.out.println("configuration"+configuration);
+	configuration.configure("hbm.cfg.xml");
+	System.out.println("configuration-->"+configuration);
+	ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();   
 	
-	queryBuffer.append("insert into notes_history(notes) values ('");
-	queryBuffer.append(notesHist+"')");
+	System.out.println("serviceRegistry"+serviceRegistry);
+	 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+	
+	   // return sessionFactory;
+	}
+	catch (Throwable ex) {
+	//logger.error("Initial SessionFactory creation failed." + ex);
+	throw new ExceptionInInitializerError(ex);
+	}
+	StringBuilder queryBuffer = new StringBuilder();
+	
+	/*queryBuffer.append("insert into notes_history(notes) values ('");
+	queryBuffer.append(notesHist+"')");*/
+
+	queryBuffer.append("insert into notes_history(notes,user_id) values ('");
+	queryBuffer.append(notesHist+"','"+loginId+"')");
 	
 	System.out.println(queryBuffer.toString());
 
