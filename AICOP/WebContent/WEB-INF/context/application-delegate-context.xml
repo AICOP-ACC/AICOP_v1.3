@@ -23,8 +23,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="notesHistoryService" class="com.acc.service.impl.NotesHistoryServiceImpl">
 	</bean>
 	
-	
-	
+
 	<bean id="triageActionsDelegate" class="com.acc.delegate.impl.TriageActionsDelegateImpl">
 		<property name="triageActionsService" ref="triageActionsService"></property>
 	</bean>
@@ -37,6 +36,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="detailedService" class="com.acc.service.impl.DetailedServiceImpl">
 	</bean>
 	
-	
-	
+	<bean id="notificationDelegate" class="com.acc.delegate.impl.NotificationDelegateImpl">
+		<property name="notificationService" ref="notificationService"></property>
+	</bean>
+	<bean id="notificationService" class="com.acc.service.impl.NotificationServiceImpl">
+	</bean>
+
 </beans>

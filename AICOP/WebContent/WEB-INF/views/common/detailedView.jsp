@@ -129,8 +129,10 @@
                       </button>
                     </div>
                     <div class="modal-body">
+
                      <p id="notesContent"><!-- Notes for Major - 1801040331 -->
                       </p> 
+
 	                     <div class="swal2-content" style="display: block;">
 		                     <div class="form-group bmd-form-group"><input id="inputFieldNotes" placeholder="Type here..." type="text" class="form-control">
 		                     </div>

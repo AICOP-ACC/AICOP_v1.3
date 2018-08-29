@@ -22,6 +22,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="notesHistoryDelegate" class="com.acc.delegate.impl.NotesHistoryDelegateImpl"></bean>
 	
 	
+
 	<bean class="com.acc.controller.TriageActionsController" scope="session">
 		<property name="triageActionsDelegate" ref="triageActionsDelegate"></property>
 
@@ -29,5 +30,15 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="triageActionsDelegate" class="com.acc.delegate.impl.TriageActionsDelegateImpl"></bean>
 	
 	<bean id="detailedDelegate" class="com.acc.delegate.impl.DetailedDelegateImpl"></bean>
+
+	<bean class="com.acc.controller.NotificationController" scope="session">
+		<property name="notificationDelegate" ref="notificationDelegate"></property>
+
+	</bean>
+	<bean id="notificationDelegate" class="com.acc.delegate.impl.NotificationDelegateImpl"></bean>
+	
+	
+	
+
 	
 </beans>

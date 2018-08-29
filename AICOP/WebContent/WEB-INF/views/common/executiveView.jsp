@@ -4,25 +4,20 @@
 <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
  -->
 <!-- CSS Files -->
+<style>
+.blink{
+		font-size: 12px;
+		font-weight: bold;
+		animation: blink 1s infinite;
+	 }
+	 
+</style>
  <script src=https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.3/flowchart.js></script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
- 
 
+<script src="resources/js/custom/Chart.bundle.js"></script>
+  <script src="resources/js/custom/utils.js"></script>
 
-
-
-
-
-
-
-
-<!-- Navbar -->
-
- 
-<!-- <div class="content">
-  <div class="container-fluid">
-   
-  <div class="row">-->
     <div class="col-md-5">
       <div class="card ">
         <div class="card-header card-header-icon card-header-info ">
@@ -37,7 +32,7 @@
 <!--           <ul class="nav nav-pills nav-pills-warning" role="tablist">
  -->          <ul class="nav nav-pills_custom nav-pills-primary nav-pills-just-icons" role="tablist">
             <li class="nav-item_custom">
-              <a class="nav-link_custom active" data-toggle="tab" href="#openMajors" role="tablist" data-toggle="tooltip" title="Open Majors">
+              <a class="nav-link_custom active" data-toggle="tab" href="#openMajors" role="tablist" data-toggle="tooltip" title="Open Majors" onclick="replaceBell()">
                 <i class="material-icons">notification_important</i>
               </a>
             </li>
@@ -47,28 +42,23 @@
               </a>
             </li>
             <li class="nav-item_custom">
-              <a class="nav-link_custom" data-toggle="tab" href="#incidentTrends" role="tablist" data-toggle="tooltip" title="Incident Trend" onclick="replacesignal()">
+              <a class="nav-link_custom" data-toggle="tab" href="#incidentTrends" role="tablist" data-toggle="tooltip" title="Incident Trend"   >
                 <i class="material-icons">poll</i>
               </a>
             </li>
           </ul>
           <div class="tab-content tab-space">
             <div class="tab-pane active" id="openMajors">
-              <marquee scrollamount=2 onmouseout="this.start()"
-							onmouseover="this.stop()" behavior="scroll" direction="up"
-							style="height: 250px;">
-							<b>1801040252 - OPOM</b> - Unable to place porting orders - Stuck
-							in Order Summary Page <br>
-							<br>
-							<b>1801040276 - MyOptus</b> - App crashes frequently
-						</marquee>
-
+             <script>replaceBell()</script>
             </div>
             <div class="tab-pane" id="otherAlerts">
               <br>Other Alerts will be displayed
             </div>
             <div class="tab-pane" id="incidentTrends">
-              Incident Trends will be displayed
+          
+   <div style="width: 400px;height: 300px;">
+<canvas id="canvas" height="200" class="chartjs-render-monitor" width="400" style="display: block; width: 400px; height: 200px;"></canvas>
+	</div>
             </div>
           </div>
         </div>
@@ -94,7 +84,7 @@
               <div class="tab-content" id="businessFlow">
                 						<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
                 						<div id="tree">
-                							<div class="chart" id="basic-example" style="width:100%;height:357px;"></div>
+                							<div class="chart" id="basic-example" style="width:100%;height:300px;"></div>
 									    <script>
 									        new Treant( chart_config );
 									    </script>
@@ -183,29 +173,13 @@
                     <div class="card card-chart" data-count="4">
                       <div class="card-header card-header-info_custom" data-header-animation="true">
                         <div class="ct-chart" id="queueMonitoringOneSLA">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <!-- <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;"><g class="ct-grids"><line y1="120" y2="120" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="235" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="48.125" x2="48.125" y1="120" y2="54.959999999999994" class="ct-bar" ct:value="542" opacity="1"></line><line x1="64.375" x2="64.375" y1="120" y2="66.84" class="ct-bar" ct:value="443" opacity="1"></line><line x1="80.625" x2="80.625" y1="120" y2="81.6" class="ct-bar" ct:value="320" opacity="1"></line><line x1="96.875" x2="96.875" y1="120" y2="26.400000000000006" class="ct-bar" ct:value="780" opacity="1"></line><line x1="113.125" x2="113.125" y1="120" y2="53.64" class="ct-bar" ct:value="553" opacity="1"></line><line x1="129.375" x2="129.375" y1="120" y2="65.64" class="ct-bar" ct:value="453" opacity="1"></line><line x1="145.625" x2="145.625" y1="120" y2="80.88" class="ct-bar" ct:value="326" opacity="1"></line><line x1="161.875" x2="161.875" y1="120" y2="67.92" class="ct-bar" ct:value="434" opacity="1"></line><line x1="178.125" x2="178.125" y1="120" y2="51.84" class="ct-bar" ct:value="568" opacity="1"></line><line x1="194.375" x2="194.375" y1="120" y2="46.8" class="ct-bar" ct:value="610" opacity="1"></line><line x1="210.625" x2="210.625" y1="120" y2="29.28" class="ct-bar" ct:value="756" opacity="1"></line><line x1="226.875" x2="226.875" y1="120" y2="12.599999999999994" class="ct-bar" ct:value="895" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="56.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="72.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="88.75" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="105" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="121.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="137.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="153.75" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="170" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="186.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">O</span></foreignObject><foreignObject style="overflow: visible;" x="202.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">N</span></foreignObject><foreignObject style="overflow: visible;" x="218.75" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">D</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg> -->
-                              <div class="col-md-4 col-sm-4 col-xs-12">
+                        <!-- <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;"><g class="ct-grids"><line y1="120" y2="120" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="235" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="48.125" x2="48.125" y1="120" y2="54.959999999999994" class="ct-bar" ct:value="542" opacity="1"></line><line x1="64.375" x2="64.375" y1="120" y2="66.84" class="ct-bar" ct:value="443" opacity="1"></line><line x1="80.625" x2="80.625" y1="120" y2="81.6" class="ct-bar" ct:value="320" opacity="1"></line><line x1="96.875" x2="96.875" y1="120" y2="26.400000000000006" class="ct-bar" ct:value="780" opacity="1"></line><line x1="113.125" x2="113.125" y1="120" y2="53.64" class="ct-bar" ct:value="553" opacity="1"></line><line x1="129.375" x2="129.375" y1="120" y2="65.64" class="ct-bar" ct:value="453" opacity="1"></line><line x1="145.625" x2="145.625" y1="120" y2="80.88" class="ct-bar" ct:value="326" opacity="1"></line><line x1="161.875" x2="161.875" y1="120" y2="67.92" class="ct-bar" ct:value="434" opacity="1"></line><line x1="178.125" x2="178.125" y1="120" y2="51.84" class="ct-bar" ct:value="568" opacity="1"></line><line x1="194.375" x2="194.375" y1="120" y2="46.8" class="ct-bar" ct:value="610" opacity="1"></line><line x1="210.625" x2="210.625" y1="120" y2="29.28" class="ct-bar" ct:value="756" opacity="1"></line><line x1="226.875" x2="226.875" y1="120" y2="12.599999999999994" class="ct-bar" ct:value="895" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="56.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="72.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="88.75" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="105" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="121.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="137.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="153.75" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="170" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="186.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">O</span></foreignObject><foreignObject style="overflow: visible;" x="202.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">N</span></foreignObject><foreignObject style="overflow: visible;" x="218.75" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">D</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg> -->
                               <script>loadSLAChart()</script>
-                              </div>
-               			 </div>
                			 
-               			 <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <!-- <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;"><g class="ct-grids"><line y1="120" y2="120" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="235" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="235" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="48.125" x2="48.125" y1="120" y2="54.959999999999994" class="ct-bar" ct:value="542" opacity="1"></line><line x1="64.375" x2="64.375" y1="120" y2="66.84" class="ct-bar" ct:value="443" opacity="1"></line><line x1="80.625" x2="80.625" y1="120" y2="81.6" class="ct-bar" ct:value="320" opacity="1"></line><line x1="96.875" x2="96.875" y1="120" y2="26.400000000000006" class="ct-bar" ct:value="780" opacity="1"></line><line x1="113.125" x2="113.125" y1="120" y2="53.64" class="ct-bar" ct:value="553" opacity="1"></line><line x1="129.375" x2="129.375" y1="120" y2="65.64" class="ct-bar" ct:value="453" opacity="1"></line><line x1="145.625" x2="145.625" y1="120" y2="80.88" class="ct-bar" ct:value="326" opacity="1"></line><line x1="161.875" x2="161.875" y1="120" y2="67.92" class="ct-bar" ct:value="434" opacity="1"></line><line x1="178.125" x2="178.125" y1="120" y2="51.84" class="ct-bar" ct:value="568" opacity="1"></line><line x1="194.375" x2="194.375" y1="120" y2="46.8" class="ct-bar" ct:value="610" opacity="1"></line><line x1="210.625" x2="210.625" y1="120" y2="29.28" class="ct-bar" ct:value="756" opacity="1"></line><line x1="226.875" x2="226.875" y1="120" y2="12.599999999999994" class="ct-bar" ct:value="895" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="56.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="72.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="88.75" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="105" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="121.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="137.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="153.75" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="170" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="186.25" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">O</span></foreignObject><foreignObject style="overflow: visible;" x="202.5" y="125" width="16.25" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 16px; height: 20px;">N</span></foreignObject><foreignObject style="overflow: visible;" x="218.75" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">D</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg> -->
-                              <div class="col-md-4 col-sm-4 col-xs-12">
-                              <script>loadSLAChart()</script>
-                              </div>
-               			 </div>
                         </div>
                       </div>
                       <div class="card-body">
-                        <div class="card-actions">
-                          <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                            <i class="material-icons">build</i> Fix Header!
-                          </button>
-                         <span style="color:#961223;"> Beyond 7 minutes</span><br>
-                         <span style="color:#35911e;"> Below 7 minutes</span>
-                        </div>
+                      
                         <h4 class="card-title">Order Management</h4>
                         <p class="card-category">Order inflows Vs Order completed</p>
                         
@@ -407,7 +381,7 @@
                     <div class="card card-stats">
                       <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
-                           <i class="material-icons">devices</i>
+                          <i class="material-icons">devices</i>
                         </div>
                         <p class="card-category">Disk Space Utilization</p>
                         <h3 class="card-title">75%</h3>
