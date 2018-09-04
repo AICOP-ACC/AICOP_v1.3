@@ -20,7 +20,7 @@
     	  var navigation=document.getElementById("navigation");
     	  navigation.innerHTML=' <span onclick="loadInitialChart()">   <b>  BSS</b></span>';
     	  var div=document.getElementById('tree');
-    	  div.innerHTML='<div class="chart" id="basic-example" style="width:100%;height:300px;"></div>';
+    	  div.innerHTML='<div class="chart" id="basic-example" style="width:100%;height:357px;"></div>';
 	        new Treant( chart_config );
     	  
     	  
@@ -38,7 +38,7 @@
 		$("#createflowchart").remove();
 		
 	//	////alert(div.innerHTML);
-		div.innerHTML=div.innerHTML+'<div id="stepOneFlowChart" style="width: 100%;height:309px;overflow-x:scroll;overflow-y:scroll;"></div>';
+		div.innerHTML=div.innerHTML+'<div id="stepOneFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
 		////alert(div.innerHTML);
 	var btn = document.getElementById("run"),
                     cd = document.getElementById("code"),
@@ -295,210 +295,34 @@ var codefinal=code+"\n"+code1;
 
 		 
 		 }
+ function replaceBell()
+  {
+	 var xmlhttp=new XMLHttpRequest();
+	 var marquee1="";
+	 xmlhttp.onreadystatechange=function(){
+	 	////alert(xmlhttp.status+" "+xmlhttp.readyState)
+	 	if(xmlhttp.status==200&&xmlhttp.readyState==4){
+	 		var a=xmlhttp.responseText;
+	 	////alert(a);
+	 	var a1=$.parseJSON(a);
+	 	 marquee1='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;">';
+	 	for(var i=0;i<a1.length;i++)
+	 		{
+	 		marquee1=marquee1+a1[i]+ " ~ <b>action required</b>" + "<br><br>";
+	 		}
+		 marquee1=marquee1+'</marquee>'
+		 ////alert("marquee1 "+marquee1);
+		 document.getElementById("x_content1").innerHTML=marquee1 ;
+	 	}
+	 	}
+
+	 xmlhttp.open("POST", "notification.do", true);
+	 xmlhttp.send();
+	 
  
-		 function replaceBell_back()
-		  {
-			 var xmlhttp=new XMLHttpRequest();
-			 var marquee1="sss";
-			 xmlhttp.onreadystatechange=function(){
-			 	//alert(xmlhttp.status+" "+xmlhttp.readyState)
-			 	if(xmlhttp.status==200&&xmlhttp.readyState==4){
-			 		var a=xmlhttp.responseText;
-			 //	alert(a);
-			 	var a1=$.parseJSON(a);
-			 	 marquee1='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;">';
-			 	for(var i=0;i<a1.length;i++)
-			 		{
-			 		var splitStr  = a1[i].split("~");
-			 		
-			 	var increm = 0;
-			 		var con ='';
-			 		//alert(a1[i]);
-			 		while(increm < splitStr.length-1) {
-			 			//alert(increm);
-			 			if(increm <= 2) {
-			 				con = "<b>"+con+ splitStr[increm]+"</b>"+" - ";
-			 			} else {
-			 				con = con+ splitStr[increm]+" - ";	
-			 			}
-			 			
-			 			increm++;
-			 		} 
-			 		marquee1 = marquee1+con+"<b><p class=\"blink\" style=\"color:black;\">"+splitStr[splitStr.length-1]+ "</p></b>";
-			 		//marquee1=marquee1+con +;
-			 		}
-				 marquee1=marquee1+'</marquee>'
-				// alert("marquee1 "+marquee1);
-				 document.getElementById("openMajors").innerHTML=marquee1 ;
-			 	}
-			 	}
 
-			 xmlhttp.open("POST", "notification.do", true);
-			 xmlhttp.send();
-			 
-		 
-
-		  }
-		 
-		 function replaceBell()
-		   {
-		   var xmlhttp=new XMLHttpRequest();
-		   var marquee1="";
-		   xmlhttp.onreadystatechange=function(){
-		    ////alert(xmlhttp.status+" "+xmlhttp.readyState)
-		    if(xmlhttp.status==200&&xmlhttp.readyState==4){
-		     var a=xmlhttp.responseText;
-		    
-		    var a1=$.parseJSON(a);
-		    var alerrt = a1.split(",");
-		    
-		   // alert(alerrt.length);
-		     marquee1='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;">';
-		    for(var i=0;i<alerrt.length;i++)
-		     {
-
-		 		var splitStr  = alerrt[i].split("~");
-		 		
-		 	var increm = 0;
-		 		var con ='';
-		 		//alert(a1[i]);
-		 		while(increm < splitStr.length-1) {
-		 			
-		 			if(increm <= 2) {
-		 				con = "<b>"+con+ splitStr[increm].replace("[","").replace("\"","")+"</b>"+" - ";
-		 			} else {
-		 				con = con+ splitStr[increm]+" - ";	
-		 			}
-		 			
-		 			increm++;
-		 		} 
-		 		marquee1 = marquee1+con+"<b><p class=\"blink\" style=\"color:black;\">"+splitStr[splitStr.length-1].replace("\"","")+ "</p></b>";
-		 		//marquee1=marquee1+con +;
-		 		
-		    	
-		    	
-		    	
-		    	
-		    	//alert(a1[i]);
-		     //marquee1=marquee1+alerrt[i]+ " ~ <b>action required</b>" + "<br><br>";
-		     }
-		    marquee1=marquee1+'</marquee>'
-		 //   alert("marquee1 "+marquee1);
-		    document.getElementById("openMajors").innerHTML=marquee1 ;
-		    }
-		    }
-
-		  xmlhttp.open("POST", "notification.do", true);
-		   xmlhttp.send();
-		   
-		  
-
-		  }
-
-		  function addData(chart, label, color, data,headLab) {
-				chart.data.datasets.push({
-					label:label,
-					backgroundColor: color,
-					borderColor: color,
-					borderWidth:2,
-					hoverBackgroundColor:color,
-					hoverBorderColor:color,
-					data:data
-		  });
-				
-		  chart.update();
-		}
-		function dynamicDataAppendOnChart(YAxislabels1, dataVal)
-		  
-		  {
-			var barChartData = {
-					labels:  ["WOMS",  "BIOS",  "OPENNET",  "GIS",  "MARS"],
-					 fontColor: 'black'
-				};
-			var ctx = document.getElementById('canvas').getContext('2d');
-			//alert(document.getElementById('canvas'));
-			var barChart = new Chart(ctx, {
-				type: 'bar',
-				data: barChartData,
-				options: {
-				legend: {
-		    display: false,
-		},
-					title: {
-						display: true,
-						text: 'Major Incident',
-					},
-					responsive: true,
-					scales: {
-						xAxes: [{
-							stacked: true,
-						}],
-						yAxes: [{
-							stacked: true
-						}]
-					}
-				}
-			});
-				
-				var incc = 0;
-				var efficiency = [];
-				var coloR = ["rgb(155,89,182)","rgb(107,158,239)","rgb(35,198,239)","rgb(228,188,87)","rgb(98,142,6)","rgb(222,193,177)","rgb(228,188,87)"];
-				/*var dynamicColors = function() {
-		            var r = Math.floor(1 * 255);
-		            var g = Math.floor(1 * 255);
-		            var b = Math.floor(Math.random() * 255);
-		            return "rgb(" + r + "," + g + "," + b + ")";
-		         };*/
-				
-				while(incc < dataVal.length) {
-					var data1 = dataVal[incc].split(",");
-					var datasetVal1=[];
-					var datasetLabel1=[];
-					for (i = 0, len = data1.length; i < len; i++) { 
-					var split1= data1[i].split("~");
-				    datasetVal1[i] = split1[1].replace(/\]/g, '');
-					datasetLabel1[i]=split1[0].replace(/\[/g, ''); 
-							//alert(datasetLabel1[i]);
-					}	
-				//	var rgbb = dynamicColors();
-					addData(barChart,YAxislabels1[incc], coloR[incc], datasetVal1,datasetLabel1);
-					incc++;
-				}
-						
-		  }
-
-		  
-		  $(document).ready(function(){
-			  var data, lablels;
-			  var result ;
-			  var YAxislabels ;
-		  $('a[href="#incidentTrends"]').click(function(){
-		      $.ajax({
-		          url: "getMajorTrend.do",
-		          type: "POST",
-		          data: data,
-		         // async: isAsync,
-		          success: function (result) {
-		        	  
-		        	  var json_obj = $.parseJSON(result);//parse JSON
-		        	  for (var i in json_obj) 
-		              {
-		                  if(i <= 0 ) {
-		                	  lablels =  json_obj[i];
-		                  } else {
-		                	  data =  json_obj[i];
-		                  }
-		                 
-		              }
-		        	  
-		            dynamicDataAppendOnChart(lablels, data);
-		            // replaceCharrrt();
-		          }
-		      });
-		      
-		  });
-		 // Now you can call the function by passing labels and data
-		  });  
+  }
+  
 
   function replaceexclamation()
   {
@@ -648,7 +472,7 @@ tagInput.tagsinput({
 		 //alert('condition is true creating chart');
 		navigation.innerHTML=navigation.innerHTML+' >> <span onclick=loadNewFlowChart("")> <b>Porting Orders</b> </span> ';
 
-	div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:309px;overflow-x:scroll;overflow-y:scroll;"></div>';
+	div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
 	////alert(div.innerHTML);
 var btn = document.getElementById("run"),
           cd = document.getElementById("code1"),
@@ -723,7 +547,7 @@ var btn = document.getElementById("run"),
 		 
 		 var div=document.getElementById("businessFlow");
 		 $("#stepTwoFlowChart").remove();
-		 div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
+		 div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>'+'<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="createflowchart">Maximize flow cahrt</button>';
 			////alert(div.innerHTML);
 		var btn = document.getElementById("run"),
 		          cd = document.getElementById("code1"),

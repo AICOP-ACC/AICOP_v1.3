@@ -88,10 +88,25 @@ public ModelAndView loadExecutiveView(HttpServletRequest request,HttpServletResp
 	}
 
 
-@RequestMapping(value="/detailedView.do")
-public ModelAndView loadDetailedView(HttpServletRequest request,HttpServletResponse response) {
-	logger.debug("Load detailed View");
-	ModelAndView mav = new ModelAndView();
+	@RequestMapping(value="/detailedView.do")
+	public ModelAndView loadDetailedView(HttpServletRequest request,HttpServletResponse response) {
+		logger.debug("Load detailed View");
+ModelAndView mav = new ModelAndView();
+		
+		/*List<NotesBean> notesList = loginDelegate.getNotesHistory();
+		
+		mav.addObject("notesList",notesList);
+		
+		mav.setViewName("common/detailedView.jsp");*/
+		mav.setViewName("common/detailedRenderView.jsp");
+		
+		return mav;
+		}
+	@RequestMapping(value="/detailedListView.do")
+	public ModelAndView loadDetailedViewWithId(HttpServletRequest request,HttpServletResponse response) {
+		logger.debug("Load detailed View with parameter");
+		
+		ModelAndView mav = new ModelAndView();
 	List<NotesBean> notesList = loginDelegate.getNotesHistory();
 	mav.addObject("notesList",notesList);
 	

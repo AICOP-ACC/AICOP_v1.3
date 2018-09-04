@@ -80,6 +80,156 @@
 							
 						<div class="row mt-3 ml-4">
 						</div>
+						
+						
+						<div class="row mt-3 ml-4">
+						
+							<div class="col-md-2">
+								<table class="table table-striped">
+								<tr>
+								<th colspan="2">Error Pattern</th>
+																
+								</tr>
+								<tr>
+								<td>Usual Error Count</td>
+								<td>50</td>
+								</tr>
+								
+								
+								<tr>
+								<td>Current Error Count</td>
+								<td>75</td>
+								</tr>
+								
+								</table>
+							</div>
+							<div class="col-md-4">
+								<table class="table table-striped">
+								<tr>
+								<th>Top Occuring Errors</th>
+								<th>Count</th>
+																
+								</tr>
+								<tr>
+								<td>URL is not defined for Carrier 0999</td>
+								<td>16</td>
+								</tr>
+								
+								
+								<tr>
+								<td>String null Can not be converted into a valid URL</td>
+								<td>12</td>
+								</tr>
+								
+								</table>
+							</div>
+
+							
+							<div class="col-md-6">
+								<table class="table table-striped">
+								<tr>
+								<th>Session Id</th>
+								<th>Long Running Queries</th>
+								<th>Server</th>
+								<th>Execute By</th>
+								<th>System</th>
+																
+								</tr>
+								<tr>
+								<td>3310545319</td>
+								<td><button class="btn-info" data-toggle="modal" data-target="#longQueryModal1">Query_3310545319<div class="ripple-container"></div></button></td>
+								<td>OPOM1001</td>
+								<td>prdusr001</td>
+								<td>OPOM</td>
+								</tr>
+								
+								<tr>
+								<td>3310545320</td>
+								<td><button class="btn-info" data-toggle="modal" data-target="#longQueryModal2">Query_3310545320<div class="ripple-container"></div></button></td>
+								<td>OPOM1002</td>
+								<td>system</td>
+								<td>OPOM</td>
+								</tr>
+															
+								</table>
+							
+							
+							
+							</div>
+
+							
+
+						</div>
+						
+						
+						  <!-- Long running query Modal 1 Starts-->
+					        <div class="modal fade" id="longQueryModal1" tabindex="-1" role="dialog" aria-labelledby="longQueryModal1Label">
+					                <div class="modal-dialog">
+					                  <div class="modal-content">
+					                    <div class="modal-header">
+					                      <h4 class="modal-title">Long Running Query/Session ID: 3310545319</h4>
+					                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					                        <i class="material-icons">clear</i>
+					                      </button>
+					                    </div>
+					                    <div class="modal-body">
+					                    <h5>Query</h5>
+					                     <p>SELECT column1 ,column2 FROM table1 WHERE column3 IN ( SELECT TOP(1) column4 FROM table2 INNER JOIN table3 ON table2.column1 = table3.column1 )</p>
+					                    </div>
+					                    <div class="modal-footer">
+					                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> 
+					                     <!--  <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close
+						                      <div class="ripple-container">
+							                      <div class="ripple-decorator ripple-on ripple-out" style="left: 15.0781px; top: 16px; background-color: rgb(244, 67, 54); transform: scale(8.50976);">
+							                      </div>
+						                      </div>
+					                      </button> -->
+					                    </div>
+					                  </div>
+					                </div>
+					              </div>
+					            <!--Long running query Modal 1  Ends -->  
+						
+						
+						  <!-- Long running query Modal 2 Starts-->
+					        <div class="modal fade" id="longQueryModal2" tabindex="-1" role="dialog" aria-labelledby="longQueryModal2Label">
+					                <div class="modal-dialog">
+					                  <div class="modal-content">
+					                    <div class="modal-header">
+					                      <h4 class="modal-title">Long Running Query/Session ID: 3310545320</h4>
+					                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					                        <i class="material-icons">clear</i>
+					                      </button>
+					                    </div>
+					                    <div class="modal-body">
+					                    <h5>Query</h5>
+					                     <p>SELECT name, second_name, date_time, address, second_address FROM registry, other_users_data WHERE registry.id = other_users_data.id;</p>
+					                    </div>
+					                    <div class="modal-footer">
+					                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> 
+					                     <!--  <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close
+						                      <div class="ripple-container">
+							                      <div class="ripple-decorator ripple-on ripple-out" style="left: 15.0781px; top: 16px; background-color: rgb(244, 67, 54); transform: scale(8.50976);">
+							                      </div>
+						                      </div>
+					                      </button> -->
+					                    </div>
+					                  </div>
+					                </div>
+					              </div>
+					            <!--Long running query Modal 2  Ends -->  
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 			      </div>
 			    </div>
 			  </div>
@@ -129,10 +279,8 @@
                       </button>
                     </div>
                     <div class="modal-body">
-
                      <p id="notesContent"><!-- Notes for Major - 1801040331 -->
                       </p> 
-
 	                     <div class="swal2-content" style="display: block;">
 		                     <div class="form-group bmd-form-group"><input id="inputFieldNotes" placeholder="Type here..." type="text" class="form-control">
 		                     </div>
@@ -410,28 +558,447 @@
 		                  <div class="nav-tabs-navigation">
 		                    <div class="nav-tabs-wrapper">
 		                      <ul class="nav nav-tabs" data-tabs="tabs">
+		                       <li class="nav-item">
+		                          <a class="nav-link active" href="#changeDetail" data-toggle="tab">
+		                           <!--  <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i> --> Change Detail
+		                          </a>
+		                        </li>
 		                        <li class="nav-item">
-		                          <a class="nav-link active" href="#notesHistory" data-toggle="tab">
-		                            <i class="material-icons rotate-icon">event_note</i> Notes History
+		                          <a class="nav-link" href="#impTechObj" data-toggle="tab">
+		                            <!-- <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i> --> Impacted Technical Object
+		                          </a>
+		                        </li>
+		                        <li class="nav-item">
+		                          <a class="nav-link" href="#sitUatResults" data-toggle="tab">
+		                           <!--  <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i> --> SIT/UAT Results
+		                          </a>
+		                        </li>
+		                        <li class="nav-item">
+		                          <a class="nav-link" href="#pitResults" data-toggle="tab">
+		                            <!-- <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i>  -->PIT Results
+		                          </a>
+		                        </li>
+		                        <li class="nav-item">
+		                          <a class="nav-link" href="#relatedIncidents" data-toggle="tab">
+		                            <!-- <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i> --> Related Incidents
+		                          </a>
+		                        </li>
+		                        <li class="nav-item">
+		                          <a class="nav-link" href="#errorLogs" data-toggle="tab">
+		                            <!-- <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i> --> Error Logs
+		                          </a>
+		                        </li>	
+		                        <li class="nav-item">
+		                          <a class="nav-link" href="#notesHistory" data-toggle="tab">
+		                            <!-- <i class="material-icons" style="transform:rotate(0deg);float:left;">event_note</i> --> Notes History
 		                          </a>
 		                        </li>
 		                        <li class="nav-item">
 		                          <a class="nav-link" href="#triageAction" data-toggle="tab">
-		                            <i class="material-icons rotate-icon">brightness_auto</i> Triage Action
+		                           <!--  <i class="material-icons" style="transform:rotate(0deg);float:left;">brightness_auto</i> --> Triage Action
 		                          </a>
 		                        </li>
+		                       
+		                        
 		                      </ul>
 		                    </div>
 		                  </div>
 		                </div>
 		                <div class="card-body ">
-		                  <div class="tab-content text-center">
-		                    <div class="tab-pane active" id="notesHistory">
+		                  <div class="tab-content">
+		                  <div class="tab-pane active" id="changeDetail">
+		                   <div class="table-responsive">
+		                  <table id="rfcDetails" class="table table-striped">
+				              <thead>
+				                <tr>
+				                  <!-- <th class="text-center">#</th> -->
+				                  <th>RFC ID</th>
+				                  <th>Impacted Applications</th>
+				                  <th>Title</th>
+				                  <th>Description</th>
+				                  <th>Start Time</th>	
+				                  <th>End Time</th>
+				                  <th>Impacted Nodes</th>
+				                  <th>Requester</th>
+				                  <th>Status</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr>
+				                	<td>C00162669</td>
+				                	<td>OPOM</td>
+				                	<td>MCT R1801.1 Production Rollin.</td>
+				                	<td>MCT R1801.1 Production Roll In Deployment</td>
+				                	<td>4/29/2018 8:00</td>
+				                	<td>4/29/2018 10:00</td>
+				                	<td>opmprdapps002</td>
+				                	<td>cp547489</td>
+				                	<td>Completed</td>
+				                
+				                </tr>
+				              </tbody>
+				              
+				            </table>
+		                  
+		                  </div>
+		                  
+		                  </div>
+		                  <div class="tab-pane" id="impTechObj">
+		                  	<div class="table-responsive">
+			                  <table id="impTechObjTable" class="table table-striped">
+					              <thead>
+					                <tr>
+					                  <!-- <th class="text-center">#</th> -->
+					                  <th>Application</th>
+					                  <th>Object</th>
+					                  <th>File Version</th>
+					                  <th>Revision Date</th>
+					                  
+					                </tr>
+					              </thead>
+					              <tbody>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Queue Package-FileSystem</td>
+					                	<td>4</td>
+					                	<td>17-Jun-17</td>
+					                					                
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>MICSM Package-UpdateScheduledTransfer</td>
+					                	<td>2</td>
+					                	<td>7-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Management Package-GCSPWorker</td>
+					                	<td>8</td>
+					                	<td>8-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Intercarrier Package-RoleComponentWorker</td>
+					                	<td>2</td>
+					                	<td>8-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>UI Package-RoleComponent</td>
+					                	<td>6</td>
+					                	<td>7-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Servlet Package-ACIFEnforcer</td>
+					                	<td>3</td>
+					                	<td>10-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Resend Package-SubwithSend</td>
+					                	<td>7</td>
+					                	<td>8-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Bean Package- ResultBean</td>
+					                	<td>6</td>
+					                	<td>9-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Handlers Package-BatchInterface</td>
+					                	<td>5</td>
+					                	<td>8-Jan-18</td>
+					                	
+					                </tr>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Controller Package- PortCaseManager</td>
+					                	<td>4</td>
+					                	<td>8-Jan-18</td>
+					                	
+					                </tr>
+					              </tbody>
+					              
+					            </table>
+		                  
+		                  </div>
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  </div>
+		                  <div class="tab-pane" id="sitUatResults">
+		                  <div class="table-responsive">
+		                  	<table id="sitUatResultsTable" class="table table-striped">
+					              <thead>
+					                <tr>
+					                  <!-- <th class="text-center">#</th> -->
+					                  <th>Application</th>
+					                  <th>CR Name</th>
+					                  <th>Child CR</th>
+					                  <th>Parent CR</th>
+					                  <th>RFC Number</th>
+					                  <th>Test Scope</th>
+					                  <th>Test Cases Executed</th>
+					                  <th>Pass Percentage</th>
+					                  <th>Defect ID</th>
+					                </tr>
+					              </thead>
+					              <tbody>
+					                <tr>
+					                	<td>OPOM</td>
+					                	<td>Apollo Box Go Live</td>
+					                	<td>133267</td>
+					                	<td>513103</td>
+					                	<td>C00162669</td>
+					                	<td>SFTP from OPOM to APOLLO for PACMAN jobsGFFI Transfer of DBRE files to Apollo</td>
+					                	<td>14</td>
+					                	<td>80%</td>
+					                	<td>106</td>
+					                	
+					                
+					                
+					                </tr>
+					                
+					              </tbody>
+					              
+					          </table>
+					          
+					        </div>
+					              
+		                  
+		                  
+		                  
+		                  
+		                  </div>
+		                  <div class="tab-pane" id="pitResults">
+		                  	 <div class="table-responsive">
+			                  	<table id="pitResultsTable" class="table table-striped">
+						              <thead>
+						                <tr>
+						                  <!-- <th class="text-center">#</th> -->
+						                  <th>Test Case ID</th>
+						                  <th>Test Case</th>
+						                  <th>Priority</th>
+						                  <th>Dependent Test Case</th>
+						                  <th>Result</th>
+						                  
+						                </tr>
+						              </thead>
+						              <tbody>
+						                <tr>
+						                	<td>TC022</td>
+						                	<td>Check whether request is being sent to MTS for Port out reversal</td>
+						                	<td>3</td>
+						                	<td>TC024</td>
+						                	<td>Passed</td>
+						                	
+						                </tr>
+						                <tr>
+						                	<td>TC022</td>
+						                	<td>Test the third party scenario for port withdraw</td>
+						                	<td>1</td>
+						                	<td>TC031</td>
+						                	<td>Passed</td>
+						                	
+						                </tr>
+						                <tr>
+						                	<td>TC032</td>
+						                	<td>Check whether user has initiated the request</td>
+						                	<td>4</td>
+						                	<td>TC024</td>
+						                	<td>Passed</td>
+						                	
+						                </tr>
+						               
+						               </tbody>
+						          </table>
+					         </div>
+		                  
+		                  
+		                  </div>
+		                  <div class="tab-pane" id="relatedIncidents">
+		                  <div class="table-responsive">
+			                  	<table id="relatedIncidentsTable" class="table table-striped">
+						              <thead>
+						                <tr>
+						                  <!-- <th class="text-center">#</th> -->
+						                  <th>ID</th>
+						                  <th>Title</th>
+						                  <th>Status</th>
+						                  <th>Application</th>
+						                  <th>Created</th>
+						                  <th>Current Owner</th>
+						                  <th>Raised By</th>
+						                  <th>RCA</th>
+						                  <th>PCA</th>
+						                  
+						                </tr>
+						              </thead>
+						              <tbody>
+						                <tr>
+						                	<td>1801031436</td>
+						                	<td>Give Back No system</td>
+						                	<td>Closed</td>
+						                	<td>MTS</td>
+						                	<td>8-Dec-17</td>
+						                	<td>ven_ranjithkumarrat</td>
+						                	<td>Madan Nair</td>
+						                	<td>Operations:Batch Mgmt gap</td>
+						                	<td>N/A</td>
+						                	
+						                </tr>
+						                <tr>
+						                	<td>1801031487</td>
+						                	<td>Give Back No system</td>
+						                	<td>Closed</td>
+						                	<td>MTS</td>
+						                	<td>24-Dec-17</td>
+						                	<td>ven_ranjithkumarrat</td>
+						                	<td>Madan Nair</td>
+						                	<td>Operations:Batch Mgmt gap</td>
+						                	<td>N/A</td>
+						                	
+						                </tr>
+						                <tr>
+						                	<td>1801031497</td>
+						                	<td>Give Back No system</td>
+						                	<td>Closed</td>
+						                	<td>MTS</td>
+						                	<td>25-Dec-17</td>
+						                	<td>ven_naveensak</td>
+						                	<td>Madan Nair</td>
+						                	<td>Operations:Batch Mgmt gap</td>
+						                	<td>N/A</td>
+						                	
+						                </tr>
+						                
+						                <tr>
+						                	<td>1801031595</td>
+						                	<td>Give Back No system</td>
+						                	<td>Closed</td>
+						                	<td>MTS</td>
+						                	<td>8-Dec-17</td>
+						                	<td>ven_prasanthmar</td>
+						                	<td>Liz Queseja</td>
+						                	<td>Operations:Batch Mgmt gap</td>
+						                	<td>N/A</td>
+						                	
+						                </tr>
+						                <tr>
+						                	<td>1801031602</td>
+						                	<td>Give Back No system</td>
+						                	<td>Closed</td>
+						                	<td>MTS</td>
+						                	<td>17-Dec-17</td>
+						                	<td>ven_prasanthmar</td>
+						                	<td>Liz Queseja</td>
+						                	<td>Operations:Batch Mgmt gap</td>
+						                	<td>N/A</td>
+						                	
+						                </tr>
+						               
+						               </tbody>
+						          </table>
+					         </div>
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  </div>
+		                  <div class="tab-pane" id="errorLogs">
+		                  	<div class="table-responsive">
+			                  	<table id="errorLogsTable" class="table table-striped">
+						              <thead>
+						                <tr>
+						                  <!-- <th class="text-center">#</th> -->
+						                  <th>Date</th>
+						                  <th>Time</th>
+						                  <th>Application</th>
+						                  <th>Error Type</th>
+						                  <th>Error Description</th>
+						                  						                  
+						                </tr>
+						              </thead>
+						              <tbody>
+						                <tr>
+						                	<td>3/8/2018</td>
+						                	<td>12:51:02</td>
+						                	<td>OPOM</td>
+						                	<td>Application Server</td>
+						                	<td>[Node Ready Sender, 1902718492] popi.inf.intercarrier.gateway.Pacer.getURL(InterCarrierMsg), URL is not defined for Carrier 1003</td>
+						                	
+						                </tr>
+						               <tr>
+						                	<td>3/8/2018</td>
+						                	<td>12:51:02</td>
+						                	<td>POPI</td>
+						                	<td>Web Server</td>
+						                	<td>[Node Ready Sender, 1902718492] popi.inf.intercarrier.gateway.Pacer.getURL(InterCarrierMsg), URL is not defined for Carrier 0999</td>
+						                	
+						                </tr>
+						                <tr>
+						                	<td>3/8/2018</td>
+						                	<td>12:51:02</td>
+						                	<td>MTS</td>
+						                	<td>DB Server</td>
+						                	<td>[Multi sender Node Ready Sender, 961309149] popi.inf.intercarrier.gateway.MultiNodeReadySender.run(), popi.inf.intercarrier.gateway.HTTPSendFailed: String null Can not be converted into a valid URL</td>
+						                	
+						                </tr>
+						                
+						                <tr>
+						                	<td>3/8/2018</td>
+						                	<td>12:51:02</td>
+						                	<td>MTS</td>
+						                	<td>Web Server</td>
+						                	<td>[Multi sender Node Ready Sender, 961309149] popi.inf.intercarrier.gateway.MultiNodeReadySender.run(), popi.inf.intercarrier.gateway.HTTPSendFailed: String null Can not be converted into a valid URL</td>
+						                	
+						                </tr>
+						               <tr>
+						                	<td>3/8/2018</td>
+						                	<td>12:51:02</td>
+						                	<td>MTS</td>
+						                	<td>Web Server</td>
+						                	<td>[Node Ready Sender, 1802054221] popi.inf.intercarrier.gateway.Pacer.getURL(InterCarrierMsg), URL is not defined for Carrier 1003</td>
+						                	
+						                </tr>
+						               </tbody>
+						          </table>
+					         </div>
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  </div>
+		                  
+		                  <div class="tab-pane" id="notesHistory">
 		                      <div class="card">
 							        <div class="card-header card-header-rose card-header-icon">
-							         <!--  <div class="card-icon">
-							            <i class="material-icons">assignment</i>
-							          </div> -->
+							         	
 							          <h4 class="card-title">Notes History</h4>
 							        </div>
 							        <div class="card-body">
@@ -440,23 +1007,7 @@
 							          </div>
 							          <div class="material-datatables">
 							            <div id="datatables_wrapper" class="dataTables_wrapper dt-bootstrap4">
-							            <!-- <div class="row">
-							            	<div class="col-sm-12 col-md-6">
-							            		<div class="dataTables_length" id="datatables_length">
-							            			<label>Show <select name="datatables_length" aria-controls="datatables" class="custom-select custom-select-sm form-control form-control-sm">
-							            				<option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="-1">All</option>
-							            				</select> entries</label>
-							            				</div>
-							            		</div>
-							            		<div class="col-sm-12 col-md-6">
-							            		<div id="datatables_filter" class="dataTables_filter">
-							            			<label><span class="bmd-form-group bmd-form-group-sm">
-							            				<input type="search" class="form-control form-control-sm" placeholder="Search records" aria-controls="datatables">
-							            				</span></label>
-							            		</div>
-							            	</div>
-							            </div>
-							             -->
+							            
 							            <div class="row">
 							            <div class="col-sm-12">
 							            <table id="notesHistoryTable" class="table table-striped table-no-bordered table-hover dataTable dtr-inline" cellspacing="0" width="100%" style="width: 100%;" role="grid" aria-describedby="datatables_info">
@@ -528,7 +1079,7 @@
 							            </div>
 							          </div>
 							        </div>
-							        end content
+							        
 							      </div>    
 		                    </div>
 		                    <div class="tab-pane" id="triageAction">
@@ -612,13 +1163,35 @@
 							         
 							          <h4 class="card-title">Manual Actions</h4>
 							          
+							          
+							          
+							           
+               <div id="actionStatus" class="col-lg-5 col-md-6 col-sm-3">
+              	  <div class="dropdown">
+	  					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    					Please Select
+	 					 </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <li><a id="NotStarted" class="dropdown-item action-status">Not Started</a></li>
+				    <li><a id="InProgress" class="dropdown-item action-status">In Progress</a></li>
+				    <li><a id="Completed" class="dropdown-item action-status">Completed</a></li>
+				  </ul>
+				</div>
+			</div> 
+							          
+							          
 							          <div class="pull-right">
 							          
          
-		 <i id="addManualAction" class="fa fa-plus-square-o icon-green icon-large mouse-point icon-embossed"></i>
+		<!--  <i id="addManualAction" class="fa fa-plus-square-o icon-green icon-large mouse-point icon-embossed"></i>
 		
 		 
-		 <i id="saveManualActions" class="fa fa-save icon-green icon-large mouse-point icon-embossed"></i> 
+		 <i id="saveManualActions" class="fa fa-save icon-green icon-large mouse-point icon-embossed"></i>  -->
+		 
+		  <button id="addManualAction" class="btn btn-info btn-round">Add</button>
+		
+		 
+		 <button id="saveManualActions" class="btn btn-success btn-round">Save</button>  
 							          </div>
 							        </div>
 		                    	<div class="card-body">
@@ -627,7 +1200,7 @@
 							            <div class="row">
 							            <div class="col-sm-12">
 							            <div class="table-responsive">
-            <table id="manualActionsTable" class="">
+            <table id="manualActionsTable" class="table table-striped">
               <thead>
                 <tr>
                   <th id="actionNoHeader" class="text-center" style="border:1px solid grey;">Action No</th>
@@ -647,7 +1220,7 @@
               <tbody>
               				<c:forEach items="${manualActionsBeanList}" var="manualAction">
 										   <tr id="${manualAction.actionId}_actionRow">
-										   <td class="text-center" style="border:1px solid grey;">
+										   <td id="${manualAction.actionId}_ActionNo" class="text-center" style="border:1px solid grey;">
 										   <c:out value="${manualAction.actionId}"/>
 										   </td>
 										   <td id="${manualAction.actionId}_Action" style="border:1px solid grey;" contenteditable=true>
@@ -716,7 +1289,7 @@
 											   </c:if> 
 											   </select>
 										   </td>
-										   <td class="td-actions" id="${manualAction.actionId}_removeAction" style="border:1px solid grey;" >
+										   <td class="" id="${manualAction.actionId}_removeAction" style="border:1px solid grey;" >
 											   <center>
 		                    						<a title="Remove Actions" style="padding: 5px; min-width:60px; height:48px;" id="removeActionBtn" class="">
 		                    							<i class="fa fa-minus-circle" style="font-size: 1.73em;color:red"></i>
@@ -753,6 +1326,13 @@
 <!-- End CMDB Tab -->
 <!-- Test End -->
 
+<script>
 
+$('.dropdown-menu li').on('click', function()
+{
+//alert("hi");
+$('#dropdownMenuButton').html($(this).text());
+});
+</script>
 
 

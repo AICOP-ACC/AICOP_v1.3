@@ -157,9 +157,9 @@ $( "#impactedAppl" ).change(function () {
     var str = ""; 
     var populateStr = "";
     $( "#impactedAppl option:selected" ).each(function() {
-    	var eachOpt = $( this ).text()
+    	var eachOpt = $( this ).text().trim();
     	populateStr += "<span class='tag'><span>"+eachOpt+";&nbsp;&nbsp;</span></span>";
-      str += $( this ).text() + " ";
+      str += $( this ).text().trim() + " ";
     });
     $('#tags_1_tagsinput').html(populateStr);
   })
@@ -203,7 +203,7 @@ $("#detailedViewNav").on("click", function() {
 
 $("#saveNotesBtn").on("click",function(){
 	console.log("saveNotesBtn clicked1..");
-	var notesVal = $("#notesContent").text();
+	var notesVal = $("#notesContent").text().trim();
 	
 	$.ajax({
 		url : "/AICOP/notesHistory.do",
@@ -448,7 +448,7 @@ $('#suggestedActionsTable').on("click", ".add-action", function() {
 		'<td id="'+highestActionNoInt+'_StartTime" class=" " style="border:1px solid grey;"></td>'+
 		'<td id="'+highestActionNoInt+'_EndTime" class=" " style="border:1px solid grey;"></td>'+		
 		'<td id="'+highestActionNoInt+'_ActualDuration" class=" " style="border:1px solid grey;"></td>'+		
-		'<td id="'+highestActionNoInt+'_DependencyStatus" style="border:1px solid grey;" class="select" contenteditable='+true+'><select id="'+highestActionNoInt+'_actionSuccess" style="width:125px"><option value="PleaseSelect">--Please Select--</option><option value="Success">Success</option><option value="Failure">Failure</option></select></td>'+
+		'<td id="'+highestActionNoInt+'_DependencyStatus" style="border:1px solid grey;" class="select" contenteditable='+true+'><select id="'+highestActionNoInt+'_actionSuccess" style="width:125px"><option value="--Please Select--">--Please Select--</option><option value="Success">Success</option><option value="Failure">Failure</option></select></td>'+
 		'<td id="'+highestActionNoInt+'_removeAction" style="border:1px solid grey;" class=" " ><center><a title="Remove Actions" style="padding: 5px; min-width:60px; height:48px;" id="removeActionBtn" class=""><i class="fa fa-minus-circle" style="font-size: 1.73em;color:red"></i></a></center></td></tr>');
 		
 		
@@ -479,13 +479,13 @@ $('#manualActionsTable').on("click", "td", function() {
 	
 	if(actionToPerform == "removeAction"){
 		
-	var highestActionNo = $('#manualActionsTable tr:eq(1) td:eq(0)').text();
+	var highestActionNo = $('#manualActionsTable tr:eq(1) td:eq(0)').text().trim();
 	
 	var highestActionNoInt = parseInt(highestActionNo);
 	console.log("deletedIdInt-->"+deletedIdInt+"highestActionNo-->"+highestActionNo);	
 	var dependencyFlag = true;
 	for(var acNo=1;acNo<=highestActionNoInt;acNo++){
-		var dependencyActionNo = $('#'+acNo+'_Dependency').text();
+		var dependencyActionNo = $('#'+acNo+'_Dependency').text().trim();
 		if(dependencyActionNo==actionNo){
 			dependencyFlag = false;
 			alert("Cannot Delete! Dependency exists for Action No:"+acNo);
@@ -539,7 +539,7 @@ function changeId(idToChange,highestActionNoInt){
 	/**Start : Check dependency and sync actionNo**/
 	
 	for(var acNo=1;acNo<=highestActionNoInt;acNo++){
-			var dependencyActionNo = $('#'+acNo+'_Dependency').text();
+			var dependencyActionNo = $('#'+acNo+'_Dependency').text().trim();
 			if(idToChange==dependencyActionNo){
 				$('#'+acNo+'_Dependency').text(newID);
 				
@@ -572,7 +572,7 @@ $('#manualActionsTable').on("change","select",function(){
 	
 	var elementId = $(this).attr("id");
 	 eleId = "#"+elementId+" option:selected";
-	  var optionSelected = $(eleId).text();
+	  var optionSelected = $(eleId).text().trim();
 	  console.log("elementId -->"+elementId);
 	  console.log("optionSelected -->"+optionSelected);
 	  var validationFlag = true;
@@ -585,7 +585,7 @@ $('#manualActionsTable').on("change","select",function(){
 			if(discreStatusFlag){
 			
 			var dependencyId = "#"+actionNo+"_Dependency";
-			var dependency = $(dependencyId).text();
+			var dependency = $(dependencyId).text().trim();
 			console.log("dependencyId::"+dependencyId+"----"+"dependency:: "+dependency);
 			if(dependency.trim() == "NA" || dependency.trim() == ""){
 				console.log("No Dependency");
@@ -594,8 +594,8 @@ $('#manualActionsTable').on("change","select",function(){
 				
 			var dependencyStatusId = "#"+dependency+"_actionStatus option:selected" ;
 			var dependencyOutcomeId = "#"+dependency+"_actionSuccess option:selected";
-			var dependencyOutcome = $(dependencyOutcomeId).text();
-			var dependencyStatus = $(dependencyStatusId).text();
+			var dependencyOutcome = $(dependencyOutcomeId).text().trim();
+			var dependencyStatus = $(dependencyStatusId).text().trim();
 			console.log("dependencyOutcome--->"+dependencyOutcome+" ::dependencyStatusId-->"+dependencyStatusId+"dependencyStatus-->"+dependencyStatus);
 			if(dependencyStatus=="Completed"){
 				console.log("Completed");
@@ -617,10 +617,10 @@ $('#manualActionsTable').on("change","select",function(){
 		
 		if(optionSelected.trim() == "Not Started"){
 			var startTimeId = "#"+actionNo+"_StartTime";
-			var startTimeVal = $(startTimeId).text();
+			var startTimeVal = $(startTimeId).text().trim();
 			
 			var endTimeId = "#"+actionNo+"_EndTime";
-			var endTimeVal = $(endTimeId).text();
+			var endTimeVal = $(endTimeId).text().trim();
 			
 			if(endTimeVal != ""){
 				alert("Cannot change Status from Completed to Not Started");
@@ -633,10 +633,10 @@ $('#manualActionsTable').on("change","select",function(){
 			console.log("check1");
 			
 			var startTimeId = "#"+actionNo+"_StartTime";
-			var startTimeVal = $(startTimeId).text();
+			var startTimeVal = $(startTimeId).text().trim();
 			
 			var endTimeId = "#"+actionNo+"_EndTime";
-			var endTimeVal = $(endTimeId).text();
+			var endTimeVal = $(endTimeId).text().trim();
 			
 			if(endTimeVal != ""){
 				alert("Cannot change Status from Completed to In Progress");
@@ -669,10 +669,10 @@ $('#manualActionsTable').on("change","select",function(){
 			console.log("check3");
 			
 			var startTimeId = "#"+actionNo+"_StartTime";
-			var startTimeVal = $(startTimeId).text();
+			var startTimeVal = $(startTimeId).text().trim();
 			
 			var endTimeId = "#"+actionNo+"_EndTime";
-			var endTimeVal = $(endTimeId).text();
+			var endTimeVal = $(endTimeId).text().trim();
 			
 			
 			if(startTimeVal == ""){
@@ -732,7 +732,7 @@ $('#manualActionsTable').on("change","select",function(){
 		  var outcomeId = "#"+actionNo+"_actionSuccess";
 		  var statusId = "#"+actionNo+"_actionStatus option:selected";
 		  console.log("statusId-->"+statusId);
-		  var actionStatus = $(statusId).text();
+		  var actionStatus = $(statusId).text().trim();
 		  console.log("actionStatus"+actionStatus);
 		  if(actionStatus.trim() == "Completed"){
 			 // autoSave(actionNo);
@@ -743,7 +743,7 @@ $('#manualActionsTable').on("change","select",function(){
 				 alert("Please change the action status!");  
 			  }
 			 
-			  $(outcomeId).val("PleaseSelect");
+			  $(outcomeId).text("--Please Select");
 		  }
 	  };
 	  
@@ -752,10 +752,10 @@ $('#manualActionsTable').on("change","select",function(){
 		  var outcomeId = "#"+actionNo+"_actionSuccess";
 		  var statusId = "#"+actionNo+"_actionStatus option:selected";
 		  
-		  var actionStatus = $(statusId).text();
+		  var actionStatus = $(statusId).text().trim();
 		  if(actionStatus.trim() == "Completed"){
 				 alert("Cannot change the outcome of Completed action status to NA!");  
-				 $(outcomeId).val("PleaseSelect");
+				 $(outcomeId).text("--Please Select--");
 				 
 			  }
 		  else{
@@ -768,19 +768,19 @@ $('#manualActionsTable').on("change","select",function(){
 function checkStatusDiscrepancy(actionNoCurr){
 	var flag = true;
 	
-	var rowCount = $('#ManualActionTable tr').length;
+	var rowCount = $('#manualActionsTable tr').length;
 	console.log("checkStatusDiscrepancy :: rowCount : " + rowCount);
 	for( var i=0;i<rowCount;i++){
 		console.log("forLoop"+i);
-	var actionNo = $('#ManualActionTable tr:eq('+i+') td:eq(0)').text();	
+	var actionNo = $('#manualActionsTable tr:eq('+i+') td:eq(0)').text().trim();	
 	
 	var statId = "#"+actionNo+"_actionStatus option:selected";
 	var outID = "#"+actionNo+"_actionSuccess option:selected";
-	var currStatus = $(statId).text();
+	var currStatus = $(statId).text().trim();
 	var currOutcomeproduct = $(outID).val();
-	//var currOutcomeproduct = $('#ManualActionTable tr:eq('+i+') td:eq(8)').text();
+	//var currOutcomeproduct = $('#manualActionsTable tr:eq('+i+') td:eq(8)').text();
 	console.log("currStatus:"+currStatus+":: currOutcomeproduct :::"+currOutcomeproduct);
-	if(currStatus=="Completed" && (currOutcomeproduct == "NA" || currOutcomeproduct == "PleaseSelect")){
+	if(currStatus=="Completed" && (currOutcomeproduct == "NA" || currOutcomeproduct == "--Please Select--")){
 		if(actionNo==actionNoCurr){
 			console.log("No discrepancy");
 		}
@@ -838,23 +838,23 @@ $('#saveManualActions').on("click", function (e) {
 		if(actionNoId!="NA"){
 		//Getting new values
 		var sNoId = "#"+actionNoId+"_ActionNo";
-		var sNo = $(sNoId).text();
+		var sNo = $(sNoId).text().trim();
 		var actionID = "#"+actionNoId+"_Action";
-		var action = $(actionID).text();
+		var action = $(actionID).text().trim();
 		var ownerId = "#"+actionNoId+"_Owner";
-		var owner = $(ownerId).text();
+		var owner = $(ownerId).text().trim();
 		var dependencyId = "#"+actionNoId+"_Dependency"
-		var dependency = $(dependencyId).text();
+		var dependency = $(dependencyId).text().trim();
 		var etcId = "#"+actionNoId+"_ETC";
-		var etc = $(etcId).text();
+		var etc = $(etcId).text().trim();
 		var actionStatusId = "#"+actionNoId+"_actionStatus  option:selected";
-		var actionStatus = $(actionStatusId).text();
+		var actionStatus = $(actionStatusId).text().trim();
 		var plannedTOCId = "#"+actionNoId+"_StartTime";
-		var plannedTOC = $(plannedTOCId).text();
+		var plannedTOC = $(plannedTOCId).text().trim();
 		var actualTOCId = "#"+actionNoId+"_EndTime";
-		var actualTOC=$(actualTOCId).text();
+		var actualTOC=$(actualTOCId).text().trim();
 		var actualDurId = "#"+actionNoId+"_ActualDuration";
-		var actualDur=$(actualDurId).text();
+		var actualDur=$(actualDurId).text().trim();
 		var actionSuccessId = "#"+actionNoId+"_actionSuccess option:selected";
 		var actionSuccess = $(actionSuccessId).val();
 		var removeActionId = "#"+actionNoId+"_removeAction";
@@ -882,23 +882,23 @@ $('#saveManualActions').on("click", function (e) {
 		
 		//Getting new values
 		var sNoId = "#"+actionNoId+"_ActionNo";
-		var sNo = $(sNoId).text();
+		var sNo = $(sNoId).text().trim();
 		var actionID = "#"+actionNoId+"_Action";
-		var action = $(actionID).text();
+		var action = $(actionID).text().trim();
 		var ownerId = "#"+actionNoId+"_Owner";
-		var owner = $(ownerId).text();
+		var owner = $(ownerId).text().trim();
 		var dependencyId = "#"+actionNoId+"_Dependency"
-		var dependency = $(dependencyId).text();
+		var dependency = $(dependencyId).text().trim();
 		var etcId = "#"+actionNoId+"_ETC";
-		var etc = $(etcId).text();
+		var etc = $(etcId).text().trim();
 		var actionStatusId = "#"+actionNoId+"_actionStatus  option:selected";
-		var actionStatus = $(actionStatusId).text();
+		var actionStatus = $(actionStatusId).text().trim();
 		var startTimeId = "#"+actionNoId+"_StartTime";
-		var startTime = $(startTimeId).text();
+		var startTime = $(startTimeId).text().trim();
 		var endTimeId = "#"+actionNoId+"_EndTime";
-		var endTime=$(endTimeId).text();
+		var endTime=$(endTimeId).text().trim();
 		var actualDurId = "#"+actionNoId+"_ActualDuration";
-		var actualDur=$(actualDurId).text();
+		var actualDur=$(actualDurId).text().trim();
 		var actionSuccessId = "#"+actionNoId+"_actionSuccess option:selected";
 		var actionSuccess = $(actionSuccessId).val();
 		
@@ -965,6 +965,86 @@ function deleteFromDatabase(actionNo){
 		
 	});
 }
+
+
+$('#addManualAction').on("click", function (e) {
+	console.log("Add Action Button clicked");
+		var highestActionNo = $('#manualActionsTable tr:eq(1) td:eq(0)').text().trim();
+		console.log(highestActionNo);
+		if(highestActionNo==""){
+			highestActionNo = "0";
+		}
+		
+		var highestActionNoInt = parseInt(highestActionNo);
+		highestActionNoInt = highestActionNoInt + 1;
+			
+		
+		$('#manualActionsTable tr:first').after('<tr id="'+highestActionNoInt+'_actionRow" style="background-color:white;color:black" class="even pointer"><td id="'+highestActionNoInt+'_ActionNo" style="border:1px solid grey;" class=" ">'+highestActionNoInt+'</td>'+
+		'<td id="'+highestActionNoInt+'_Action" class=" " style="border:1px solid grey;" contenteditable='+true+'></td>'+
+		'<td id="'+highestActionNoInt+'_Owner" class=" " style="border:1px solid grey;" contenteditable='+true+'></td>'+
+		'<td id="'+highestActionNoInt+'_Dependency" class=" " style="border:1px solid grey;" contenteditable='+true+'></td>'+
+		'<td id="'+highestActionNoInt+'_ETC" class="select" style="border:1px solid grey;" contenteditable='+true+'></td>'+
+		'<td id="'+highestActionNoInt+'_Status" style="border:1px solid grey;" class="select" contenteditable='+true+'><select style="width:125px" id="'+highestActionNoInt+'_actionStatus"><option value="Not Started">Not Started</option><option value="In Progress">In Progress</option><option value="Completed">Completed</option></select></td>'+
+		'<td id="'+highestActionNoInt+'_StartTime" class=" " style="border:1px solid grey;">'+
+		'<td id="'+highestActionNoInt+'_EndTime" class=" " style="border:1px solid grey;"></td>'+		
+		'<td id="'+highestActionNoInt+'_ActualDuration" class=" " style="border:1px solid grey;"></td>'+		
+		'</td><td id="'+highestActionNoInt+'_DependencyStatus" style="border:1px solid grey;" class="select" contenteditable='+true+'><select style="width:125px" id="'+highestActionNoInt+'_actionSuccess"><option value="--Please Select--">--Please Select--</option><option value="Success">Success</option><option value="Failure">Failure</option></select></td>'+
+		'<td id="'+highestActionNoInt+'_removeAction" style="border:1px solid grey;" class=" " ><center><a title="Remove Actions" style="padding: 5px; min-width:60px; height:48px;" id="removeActionBtn" class=""><i class="fa fa-minus-circle" style="font-size: 1.73em;color:red"></i></a></center></td></tr>');
+		
+		var actionsAddedNew = $('#newActionsAddedHidden').val();
+		console.log("actionsAddedNew11-->"+actionsAddedNew);
+		if(actionsAddedNew !=""){
+			
+		$('#newActionsAddedHidden').val(actionsAddedNew+","+highestActionNoInt);
+		}
+		else{
+			$('#newActionsAddedHidden').val(highestActionNoInt);
+		}
+		
+		
+		
+	
+	
+	
+});
+
+$('#sendMail').on("click", function (e) {
+	console.log("send mail clicked");
+	var toEmail = $('#toEmail').val();
+	var subEmail = $('#subject').val();
+	var content = $('#mailContent').val();
+	console.log(content);
+	
+	var sendEmail = {
+	  "async": true,
+	  "crossDomain": true,
+	  "url": "https://dh.aiam.accenture.com/optusams-node/sendMail",
+	  "method": "POST",
+	  "headers": {
+		"content-type": "application/x-www-form-urlencoded",
+		"cache-control": "no-cache"   
+	  },
+	  "data": {
+		"to": toEmail,
+		"subject":subEmail,
+		"content":content
+	  }
+	  
+	}
+
+	$.ajax(sendEmail).done(function (response) {
+	  console.log(response);
+	  console.log("Email sent....")
+	});
+
+	});
+
+
+$('#actionStatus').on("click","a",function(){
+	console.log("On click of action Status");
+	var elementId = $(this).attr('id');
+	console.log("elementId-->"+elementId);
+})
 
 if(window.location.href.indexOf("detailedView") > -1) 
 {

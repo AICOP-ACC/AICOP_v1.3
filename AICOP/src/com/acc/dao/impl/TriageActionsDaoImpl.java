@@ -268,6 +268,7 @@ try {
     	queryBuffer.append(" incident_id as \"incidentId\"");
     	
     	queryBuffer.append(" FROM manual_actions");
+    	queryBuffer.append(" ORDER BY action_id DESC");
     	//TODO - To include where condition for incident_id
     	
     	Session session = sessionFactory.openSession();
