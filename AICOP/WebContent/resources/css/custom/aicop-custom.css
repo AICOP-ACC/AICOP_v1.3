@@ -144,3 +144,8 @@ font-weight:bold;
 	float:left;
 }
 
+.blink{
+		font-size: 12px;
+		font-weight: bold;
+		animation: blink 1s infinite;
+	 }
