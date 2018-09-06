@@ -433,8 +433,8 @@
                     </button>
                   </td>
                 </tr>
-                <tr>
-                  <!-- <td class="text-center">5</td> -->
+                <!-- <tr>
+                  <td class="text-center">5</td>
                    <td>NA</td>
                   <td>Guest</td>
                   <td>NA</td>
@@ -445,7 +445,7 @@
                       <i class="material-icons">close</i>
                     </button>
                   </td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -1166,7 +1166,7 @@
 							          
 							          
 							           
-               <div id="actionStatus" class="col-lg-5 col-md-6 col-sm-3">
+               <!-- <div id="actionStatus" class="col-lg-5 col-md-6 col-sm-3">
               	  <div class="dropdown">
 	  					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    					Please Select
@@ -1177,7 +1177,7 @@
 				    <li><a id="Completed" class="dropdown-item action-status">Completed</a></li>
 				  </ul>
 				</div>
-			</div> 
+			</div>  -->
 							          
 							          
 							          <div class="pull-right">

@@ -1,0 +1,189 @@
+rect{
+    fill:white;
+}
+
+#svgEdit{
+    position: relative;
+    left: 50px;
+    top: 10%;
+    background-color:white;
+    z-index: 6;
+}
+
+#PNButton{
+    position: absolute;
+    left: 50px;
+}
+
+#PNButton1{
+    position: absolute;
+    left: 50px;
+}
+
+#PNButton2{
+    position: absolute;
+    left: 200px;
+}
+
+#CRMBCCRect{
+    fill:white;
+    stroke:tomato;
+    stroke-width:2;
+    opacity:1;
+}
+
+#MiddlewareRect{
+    fill:white;
+    stroke:rgb(47, 99, 245);
+    stroke-width:2;
+    opacity:1;
+}
+
+#PortINRect{
+    fill:white;
+    stroke:tomato;
+    stroke-width:2;
+    opacity:1;
+}
+
+#CRMNotiRect{
+    fill:white;
+    stroke:tomato;
+    stroke-width:2;
+    opacity:1;
+}
+
+#ellipseCarrier{
+    fill:white;
+    stroke:red;
+    stroke-width:2;
+    opacity:1;
+}
+
+#activationSystemRect{
+    fill:white;
+    stroke:rgb(255, 255, 0);
+    stroke-width:2;
+    opacity:1;
+}
+
+.textClassBold{
+    font-weight: bold;
+}
+
+.textClass{
+    font-weight: bold;
+}
+
+
+#MiddleReceiveRect{
+    fill:white;
+    stroke:rgb(0, 65, 243);
+    stroke-width:2;
+    opacity:1;
+}
+
+#NotifyMiddleRect{
+    fill:white;
+    stroke:rgb(0, 65, 243);
+    stroke-width:2;
+    opacity:1;
+}
+
+#TriggerMiddleRect{
+    fill:white;
+    stroke:rgb(0, 65, 243);
+    stroke-width:2;
+    opacity:1;
+}
+
+#NotifyRejectRect{
+    fill:white;
+    stroke:rgb(0, 65, 243);
+    stroke-width:2;
+    opacity:1;
+}
+
+#InitiationRect{
+    fill:white;
+    stroke:rgb(0, 65, 243);
+    stroke-width:2;
+    opacity:1;
+}
+
+#confirmRect{
+    fill:white;
+    stroke:rgb(85, 105, 151);
+    stroke-width:2;
+    opacity:1;
+}
+
+#disconnectRect{
+    fill:white;
+    stroke:rgb(85, 105, 151);
+    stroke-width:2;
+    opacity:1;
+}
+
+#PopiRect{
+    fill:white;
+    stroke:green;
+    stroke-width:2;
+    opacity:1;
+}
+
+#RcvReqRect{
+    fill:white;
+    stroke:green;
+    stroke-width:2;
+    opacity:1;
+}
+
+#RcvRespRect{
+    fill:white;
+    stroke:green;
+    stroke-width:2;
+    opacity:1;
+}
+
+#SendDiscRect{
+    fill:white;
+    stroke:green;
+    stroke-width:2;
+    opacity:1;
+}
+
+#RcvResp2Rect{
+    fill:white;
+    stroke:green;
+    stroke-width:2;
+    opacity:1;
+}
+
+#BroadcastRect{
+    fill:white;
+    stroke:green;
+    stroke-width:2;
+    opacity:1;
+}
+
+#LosingRect{
+    fill:white;
+    stroke:rgb(219, 146, 37);
+    stroke-width:2;
+    opacity:1;
+}
+
+#DisconnectLosingRect{
+    fill:white;
+    stroke:rgb(219, 146, 37);
+    opacity:1;
+    stroke-width:2;
+}
+
+#NotifiedCarrierRect{
+    fill:white;
+    stroke:rgb(219, 146, 37);
+    stroke-width:2;
+    opacity:1;
+}

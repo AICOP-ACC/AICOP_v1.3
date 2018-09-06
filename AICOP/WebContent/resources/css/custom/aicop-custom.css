@@ -147,5 +147,30 @@ font-weight:bold;
 .blink{
 		font-size: 12px;
 		font-weight: bold;
-		animation: blink 1s infinite;
+color:#FF6600;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+button{
+	 color: white;
+	 background-color: green;
+	 width:80px;
 	 }
+	 
+	 #apps{
+	 color: white;
+	 margin-top: 20px;
+	 }
+	 rect#PortINInitiatedinCRM {
+    fill: red;
+}

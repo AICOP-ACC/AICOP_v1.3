@@ -20,7 +20,7 @@
     	  var navigation=document.getElementById("navigation");
     	  navigation.innerHTML=' <span onclick="loadInitialChart()">   <b>  BSS</b></span>';
     	  var div=document.getElementById('tree');
-    	  div.innerHTML='<div class="chart" id="basic-example" style="width:100%;height:300px;"></div>';
+    	  div.innerHTML='<div class="chart" id="basic-example" style="width:100%;height:357px;"></div>';
 	        new Treant( chart_config );
     	  
     	  
@@ -38,7 +38,7 @@
 		$("#createflowchart").remove();
 		
 	//	////alert(div.innerHTML);
-		div.innerHTML=div.innerHTML+'<div id="stepOneFlowChart" style="width: 100%;height:309px;overflow-x:scroll;overflow-y:scroll;"></div>';
+		div.innerHTML=div.innerHTML+'<div id="stepOneFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
 		////alert(div.innerHTML);
 	var btn = document.getElementById("run"),
                     cd = document.getElementById("code"),
@@ -296,39 +296,38 @@ var codefinal=code+"\n"+code1;
 		 
 		 }
  
-		 function replaceBell_back()
+		
+		 
+		 function replaceBell()
 		  {
 			 var xmlhttp=new XMLHttpRequest();
 			 var marquee1="sss";
 			 xmlhttp.onreadystatechange=function(){
-			 	//alert(xmlhttp.status+" "+xmlhttp.readyState)
 			 	if(xmlhttp.status==200&&xmlhttp.readyState==4){
 			 		var a=xmlhttp.responseText;
-			 //	alert(a);
+			 	
 			 	var a1=$.parseJSON(a);
-			 	 marquee1='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;">';
-			 	for(var i=0;i<a1.length;i++)
+			 	var test = a1.split(",")
+			 
+			 	 marquee1='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;color:black;">';
+			 	for(var i=0;i<test.length;i++)
 			 		{
-			 		var splitStr  = a1[i].split("~");
-			 		
+			 		var splitStr  = test[i].split("~");
 			 	var increm = 0;
 			 		var con ='';
-			 		//alert(a1[i]);
 			 		while(increm < splitStr.length-1) {
-			 			//alert(increm);
-			 			if(increm <= 2) {
-			 				con = "<b>"+con+ splitStr[increm]+"</b>"+" - ";
+			 			var marString = splitStr[increm].replace(/[^\w\s]/gi, '');
+			 			if(increm < 2) {
+			 				con = "<b>"+con+ marString+"</b>"+" - ";
 			 			} else {
-			 				con = con+ splitStr[increm]+" - ";	
+			 				con = con+ marString;	
 			 			}
 			 			
 			 			increm++;
 			 		} 
-			 		marquee1 = marquee1+con+"<b><p class=\"blink\" style=\"color:black;\">"+splitStr[splitStr.length-1]+ "</p></b>";
-			 		//marquee1=marquee1+con +;
+			 		marquee1 = marquee1+con+"<span class=\"blink\">~~"+splitStr[splitStr.length-1].replace(/"/g,"").replace(/[^\w\s]/gi, '')+ "</span>"+"<br><br>";
 			 		}
 				 marquee1=marquee1+'</marquee>'
-				// alert("marquee1 "+marquee1);
 				 document.getElementById("openMajors").innerHTML=marquee1 ;
 			 	}
 			 	}
@@ -340,60 +339,8 @@ var codefinal=code+"\n"+code1;
 
 		  }
 		 
-		 function replaceBell()
-		   {
-		   var xmlhttp=new XMLHttpRequest();
-		   var marquee1="";
-		   xmlhttp.onreadystatechange=function(){
-		    ////alert(xmlhttp.status+" "+xmlhttp.readyState)
-		    if(xmlhttp.status==200&&xmlhttp.readyState==4){
-		     var a=xmlhttp.responseText;
-		    
-		    var a1=$.parseJSON(a);
-		    var alerrt = a1.split(",");
-		    
-		   // alert(alerrt.length);
-		     marquee1='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;">';
-		    for(var i=0;i<alerrt.length;i++)
-		     {
-
-		 		var splitStr  = alerrt[i].split("~");
-		 		
-		 	var increm = 0;
-		 		var con ='';
-		 		//alert(a1[i]);
-		 		while(increm < splitStr.length-1) {
-		 			
-		 			if(increm <= 2) {
-		 				con = "<b>"+con+ splitStr[increm].replace("[","").replace("\"","")+"</b>"+" - ";
-		 			} else {
-		 				con = con+ splitStr[increm]+" - ";	
-		 			}
-		 			
-		 			increm++;
-		 		} 
-		 		marquee1 = marquee1+con+"<b><p class=\"blink\" style=\"color:black;\">"+splitStr[splitStr.length-1].replace("\"","")+ "</p></b>";
-		 		//marquee1=marquee1+con +;
-		 		
-		    	
-		    	
-		    	
-		    	
-		    	//alert(a1[i]);
-		     //marquee1=marquee1+alerrt[i]+ " ~ <b>action required</b>" + "<br><br>";
-		     }
-		    marquee1=marquee1+'</marquee>'
-		 //   alert("marquee1 "+marquee1);
-		    document.getElementById("openMajors").innerHTML=marquee1 ;
-		    }
-		    }
-
-		  xmlhttp.open("POST", "notification.do", true);
-		   xmlhttp.send();
-		   
-		  
-
-		  }
+		 
+		 
 
 		  function addData(chart, label, color, data,headLab) {
 				chart.data.datasets.push({
@@ -502,45 +449,13 @@ var codefinal=code+"\n"+code1;
 
   function replaceexclamation()
   {
-  document.getElementById("otherAlerts").innerHTML='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;color:black;font-size:12px">PN Sent from OPOM to MTS is Low - <b style="color:#FF6600;">Action Required</b><br><br>Active Connections in HELIX MOBILE Application Server is Increasing - <b style="color:#FF6600;">Action Required</b> <br><br>Pending Requests in Queue : EAI is above Threshold limit continuously for past 15 Minutes - <b style="color:#FF6600;">Action Required </b><br><br>Pending Requests in Queue : NFT is above Threshold limit continuously for past 15 Minutes -<b style="color:#FF6600;">Action Required</b></marquee>';
+  document.getElementById("otherAlerts").innerHTML='<marquee scrollamount=2 onmouseout="this.start()" onmouseover="this.stop()"  behavior="scroll" direction="up" style="height:250px;color:black;font-size:15px"><b>PN Sent from OPOM to MTS is Low </b><span class=\"blink\"><b style="color:#FF6600;"> ~~ Action Required</span></b><br><br>Active Connections in HELIX MOBILE Application Server is Increasing  <span class=\"blink\"><b style="color:#FF6600;"> ~~ Action Required</b> </span><br><br>Pending Requests in Queue : EAI is above Threshold limit continuously for past 15 Minutes  <span class=\"blink\"><b style="color:#FF6600;"> ~~ Action Required </b></span><br><br>Pending Requests in Queue : NFT is above Threshold limit continuously for past 15 Minutes  <span class=\"blink\"><b style="color:#FF6600;"> ~~ Action Required</b></span></marquee>';
 
   }
   
   function replacesignal()
   {
 	  document.getElementById("incidentTrends").innerHTML='<div id="chartContainer" style="height: 230px; max-width: 100%; margin: 0px auto;"></div>';
-	  /*var f=document.getElementById("mybarChart");
-	  var chart=new Chart(f,{type:"bar",data:{datasets:[{label:"# of Incidents",backgroundColor:"#26B99A",data:[51,30,40,28,92,50]},{label:"# of Incidents",backgroundColor:"red",data:[51,30,40,28,92,50]},{label:"# of Incidents",backgroundColor:"green",data:[51,30,40,28,92,50]}]},options:{ scales: {
-		    xAxes: [{ stacked: true }],
-		    yAxes: [{ stacked: true }]
-		  }}})
-
-	  
-	  var xmlhttp=new XMLHttpRequest();
-		 var marquee1="";
-		 xmlhttp.onreadystatechange=function(){
-		 	////alert(xmlhttp.status+" "+xmlhttp.readyState)
-		 	if(xmlhttp.status==200&&xmlhttp.readyState==4){
-		 		var a=xmlhttp.responseText;
-		 	////alert(a);
-		 	var a1=$.parseJSON(a);
-		 	for(var i=0;i<a1.length;i++)
-		 		{
-		 		var data=a1[i]+'';
-		 		var array = data.split(",");
-		 		chart.data.labels[i]=array[0];
-		 		chart.data.datasets[0].data[i] =array[1];
-		 		chart.update();
-		 		}
-		 
-		 	}
-		 	
-		 	}
-
-		 xmlhttp.open("POST", "bgraph.do", true);
-		 xmlhttp.send();*/
-	  
-	  ////alert("loading options");
 	  var options = {
 			  	responsive: true,	
 			  	height: 250,
@@ -648,7 +563,7 @@ tagInput.tagsinput({
 		 //alert('condition is true creating chart');
 		navigation.innerHTML=navigation.innerHTML+' >> <span onclick=loadNewFlowChart("")> <b>Porting Orders</b> </span> ';
 
-	div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:309px;overflow-x:scroll;overflow-y:scroll;"></div>';
+	div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
 	////alert(div.innerHTML);
 var btn = document.getElementById("run"),
           cd = document.getElementById("code1"),
@@ -723,7 +638,7 @@ var btn = document.getElementById("run"),
 		 
 		 var div=document.getElementById("businessFlow");
 		 $("#stepTwoFlowChart").remove();
-		 div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
+		 div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>'+'<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="createflowchart">Maximize flow cahrt</button>';
 			////alert(div.innerHTML);
 		var btn = document.getElementById("run"),
 		          cd = document.getElementById("code1"),
@@ -1363,3 +1278,97 @@ function loadTMTQueuePostpaid() {
 	  	}
 	  	chart.render();
 	  }
+  
+  
+  function healthCheck()
+  {
+	  
+	  var healthcheckarray=[];
+	  var healthcheckarray1;
+
+	  var xmlhttp=new XMLHttpRequest();
+	  		
+	  		   xmlhttp.onreadystatechange=function(){
+	  		    ////alert(xmlhttp.status+" "+xmlhttp.readyState)
+	  		    if(xmlhttp.status==200&&xmlhttp.readyState==4){
+	  		     var a=xmlhttp.responseText;
+	  		    
+	  		  var b=$.parseJSON(a);
+	  		 var d=b.split(",");
+	  		  for(var c=0;c<d.length;c++)
+	  			  {
+	  			  healthcheckarray[c]="'"+d[c].replace('[','').replace(']','')+"'";
+	  			  
+	  			  }
+	  		  alert(healthcheckarray);
+	  		
+	  		 
+	  		alert(healthcheckarray[0]);
+	  		    }
+	  		    }
+
+	  		  xmlhttp.open("GET", "healthCheck.do", true);
+	  		  // xmlhttp.send();
+
+
+
+
+
+
+	      $('#tokenfield').tokenfield({
+	    	  
+	        autocomplete: {
+	        	  
+	        	source: function (request, response) {
+	                jQuery.get("healthCheck.do", {
+	                    query: request.term
+	                }, function (data) {
+	                	//alert(data);
+	                    data = $.parseJSON(data);
+	                    response(data);
+	                });
+	            },
+	          delay: 100
+	        },
+	        showAutocompleteOnFocus: true
+	      });
+	      
+	      $("form").submit(function(e) {
+	          e.preventDefault();
+	          $('.form-data').text( $('#tokenfield').val());
+	      });
+	  	
+	  	
+	  	$('#tokenfield').on('tokenfield:createtoken', function (e) {
+	      var data = e.attrs.value.split('|')
+	      e.attrs.value = data[1] || data[0]
+	      e.attrs.label = data[1] ? data[0] + ' (' + data[1] + ')' : data[0]
+	    }).on('tokenfield:createdtoken', function (e) {
+	    
+	      // �ber-simplistic e-mail validation
+	      var re = /\S+@\S+\.\S+/
+	      var valid = re.test(e.attrs.value)
+	      if (!valid) {
+	    	  var div=document.getElementById("apps");
+	    	  var button=document.getElementById(e.attrs.value);
+	    	  if(button==null)
+	    	{
+	    	  div.innerHTML=div.innerHTML+"<button id="+e.attrs.value+">"+e.attrs.value+"</button>"
+	    	}
+	      }
+	    }).on('tokenfield:removedtoken', function (e) {
+	    var div=document.getElementById(e.attrs.value);
+	    
+	      div.parentNode.removeChild(div);
+	    })
+  }
+  
+  
+  
+  function add_health()
+  {
+	  document.getElementById("healthcheck").innerHTML='<input type="text" class="form-control"  data-tokens="PGW,Helix" id="tokenfield" /><div id="apps"><button id="PGW">PGW</button><button id="Helix">Helix</button></div>';
+	  
+	  
+	  
+  }
