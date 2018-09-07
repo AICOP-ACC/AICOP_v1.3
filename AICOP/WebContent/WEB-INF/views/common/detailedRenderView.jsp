@@ -26,7 +26,7 @@
 
 	 
 </style>
- <script type="text/javascript" src="resources/js/package/jquery.min.js"></script>
+ <!-- <script type="text/javascript" src="resources/js/package/jquery.min.js"></script> -->
  <script src=https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.3/flowchart.js></script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
  <script type="text/javascript" src="resources/js/custom/businessFlow.js"></script>
@@ -157,6 +157,7 @@
         <br/><br/>
         <!-- Business Flow Diagram -->
         <div class="detLink">
+        <br/><br/>
         <svg width="1000" height="500" id="svgEdit"  transform="scale(1.14)">
         <!--First phase-->
         <g id="firstPhase">

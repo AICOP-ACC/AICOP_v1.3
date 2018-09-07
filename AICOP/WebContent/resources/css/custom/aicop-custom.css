@@ -174,3 +174,11 @@ button{
 	 rect#PortINInitiatedinCRM {
     fill: red;
 }
+
+.notes-icon-bar{
+					width:28%;
+					background-color:#555;
+					overflow:auto;
+					font-size:20px;
+					color:white;
+					}

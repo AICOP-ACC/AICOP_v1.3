@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	
+	$('#emailContentArea').hide();
 $(".open-button").on("click", function() {
   $(this).closest('.collapse-group').find('.collapse').collapse('show');
 });
@@ -1059,18 +1061,21 @@ if(window.location.href.indexOf("detailedView") > -1)
 }
 if(window.location.href.indexOf("executiveView") > -1) 
 {
-	alert("executive");
+	
      $("#attid").toggle();
      $("#pagesNav").toggle('nav-collapse');
      $("#executiveViewNav").addClass("active");
 }
 if(window.location.href.indexOf("detailedView") > -1) 
 {
-	alert("detail");
+	
      $("#attiddetail").toggle();
      $("#pagesNav").toggle('nav-collapse');
      $("#detailedViewNav").addClass("active");
 }
 
-
+$("#emailNotes").on('click',function(){
+	$('#emailContentArea').show();
+	
+})
 });

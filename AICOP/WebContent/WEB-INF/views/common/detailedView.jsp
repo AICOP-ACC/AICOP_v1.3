@@ -301,7 +301,7 @@
             <!-- Notes Modal Ends -->  
             
             <!-- Share Bridge Details Modal Starts -->
-            <div class="modal fade" id="popUpModalEmail" tabindex="-1" role="dialog" aria-labelledby="popUpModalEmailLabel">
+            <!-- <div class="modal fade" id="popUpModalEmail" tabindex="-1" role="dialog" aria-labelledby="popUpModalEmailLabel">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -314,15 +314,15 @@
                     <form action="#">
                       <div class="form-group">
                       			
-							      <!-- <label for="toEmail">To:</label> -->
+							      <label for="toEmail">To:</label>
 							      <input type="email" class="form-control" id="toEmail" placeholder="To:" name="toEmail">
 							    </div>
 							    <div class="form-group">
-							      <!-- <label for="ccEmail">Cc:</label> -->
+							      <label for="ccEmail">Cc:</label>
 							      <input type="email" class="form-control" id="ccEmail" placeholder="Cc:" name="ccEmail">
 							    </div>
 							  	<div class="form-group">
-							      <!-- <label for="subject">Subject:</label> -->
+							      <label for="subject">Subject:</label>
 							      <input type="text" class="form-control" id="subject" placeholder="Subject:" name="subject">
 							    </div>
 							    <div class="form-group">
@@ -340,7 +340,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
              <!-- Share Bridge Details Modal Ends -->
              
              <!-- Error Modal Starts -->
@@ -367,7 +367,8 @@
               
               
         <div class="card-body">
-          <div class="table-responsive">
+        <div class="row">
+          <div class="table-responsive col-md-7">
             <table id="memDetTable" class="table">
               <thead>
                 <tr>
@@ -376,8 +377,8 @@
                   <th>Contact</th>
                   <th>Designation</th>
                   <th>Contact Type</th>
-                  <th class="text-right">Number</th>
-                  <th class="text-right">Remove</th>
+                  <th>Number</th>
+                  <th>Remove</th>
                 </tr>
               </thead>
               <tbody>
@@ -387,11 +388,11 @@
                   <td>Srinivasan Sadagopan</td>
                   <td>Duty Manager</td>
                   <td>Primary</td>
-                  <td class="text-right">+919790978398</td>
+                  <td>+919790978398</td>
                   <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                      <!-- <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                       <i class="material-icons">close</i>
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 <tr>
@@ -400,11 +401,11 @@
                   <td>Vinoth G</td>
                   <td>Team Lead</td>
                   <td>Primary</td>
-                  <td class="text-right">+919600914814</td>
+                  <td>+919600914814</td>
                   <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                      <!-- <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                       <i class="material-icons">close</i>
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 <tr>
@@ -413,11 +414,11 @@
                   <td>Partha</td>
                   <td>SME</td>
                   <td>Primary</td>
-                  <td class="text-right">+919176635540</td>
+                  <td>+919176635540</td>
                   <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                      <!-- <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                       <i class="material-icons">close</i>
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 <tr>
@@ -426,11 +427,11 @@
                   <td>Sampath</td>
                   <td>Support Analyst</td>
                   <td>Primary</td>
-                  <td class="text-right">+919962306163</td>
+                  <td>+919962306163</td>
                   <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                      <!-- <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                       <i class="material-icons">close</i>
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 <!-- <tr>
@@ -449,7 +450,37 @@
               </tbody>
             </table>
           </div>
+         <div class="col-md-4">
          
+                         
+                    <textarea id="notesContentHistory" rows="6" cols="150" style="width:inherit;line-height:1em" placeholder="" readonly="readonly">Notes added for Alert - PN Sent from OPOM to MTS is Zero/ Major - 1801040252
+Notes : Middleware team to check for the stuck threads
+Notes : CRM team to check for long running queries
+RCA : Initial analysis suggest issue is due to the stuck threads found in MDSPRD002 server
+					</textarea>
+                 
+						<br><br>    
+                    <textarea id="notesContent" rows="4" cols="150" style="width:inherit;line-height:15px" placeholder="Type here..."></textarea>
+                  
+                   	
+                   <br>
+					<div class="notes-icon-bar" style="float:right">
+						 &nbsp;
+						
+						<a id="saveNotesBtn" title="Save Notes">
+                      <i class="fa fa-save"></i>
+                    </a> &nbsp;
+                    <a id="emailNotes" title="Email Notes">
+                      <i class="fa fa-envelope"></i>
+                    </a> &nbsp;
+                    <a id="genRCA" title="Generate RCA">
+                      <i class="fa fa-download"></i>
+                    </a>
+					 </div>
+         
+         
+         </div>
+         </div>
           <div class="row">
 		 	
 		 		<label class="col-md-2 aicop-padding-left-20 text-info">Add Number </label>
@@ -467,8 +498,36 @@
 		 	
 		 	<div class="col-md-3" id="errorMsg" class="form-group text-danger"></div>
 		 </div>
-		 
+		 <div id="emailContentArea">
+        	 <span id="emailContent">
+       			 <form action="#" class="col-md-7">
+       				 <h4 class="text-primary">Compose Mail</h4>
+                      	<div class="form-group">
+    					
+                      			
+							      <!-- <label for="toEmail">To:</label> -->
+							      <input type="email" class="form-control" id="toEmail" placeholder="To:" name="toEmail">
+							    </div>
+							    <div class="form-group">
+							      <!-- <label for="ccEmail">Cc:</label> -->
+							      <input type="email" class="form-control" id="ccEmail" placeholder="Cc:" name="ccEmail">
+							    </div>
+							  	<div class="form-group">
+							      <!-- <label for="subject">Subject:</label> -->
+							      <input type="text" class="form-control" id="subject" placeholder="Subject:" name="subject">
+							    </div>
+							    <div class="form-group">
+							      <textarea id="mailContent" rows="5" placeholder="Type content here..." class="form-control"></textarea>
+							      
+							    </div>
+							    <button id="sendMail" type="button" class="btn btn-success btn-round">Send</button>
+							  </form>
+
+        </span>
         </div>
+        </div>
+        
+        
       </div>
 			      </div>
 			    </div>
