@@ -1321,4 +1321,47 @@ function getRfcDetails(appName){
 		
 	});
 }
+
+function getTechnicalObjectsDetails(appName){
+	$.ajax({
+		url : "/AICOP/getTechnicalObjectsDetails.do",
+		contentType : "application/json",
+		type : "POST",
+		data : JSON.stringify(appName),
+			success : function(data){
+			var impTechObjTable = $('#impTechObjTable').DataTable({
+				    "bPaginate": true,
+				    "bLengthChange": false,
+				    "bFilter": true,
+				    "bInfo": false,
+				    "bAutoWidth": true,
+				    /*"aoColumnDefs" : [
+						{ "sWidth": "222px","text-align": "left", "aTargets":[0]},
+						{ "sWidth": "326px","text-align": "left", "aTargets":[1]},
+						{ "sWidth": "168px","text-align": "left", "aTargets":[2]}
+						
+					]*/
+			       });
+				   
+				
+			impTechObjTable.row.add([
+				data.rfcId,
+				data.impactedApplication,
+				data.title,
+				data.description,
+				data.startDt,
+				data.endDt,
+				data.impactedNodes,
+				data.requester,
+				data.status
+				     ]).draw(false);
+				
+				
+			},
+			error : function(){
+				console.log("error")
+			}
+		
+	});
+}
 });
