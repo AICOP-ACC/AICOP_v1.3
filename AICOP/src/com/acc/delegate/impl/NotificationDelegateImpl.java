@@ -3,6 +3,8 @@ package com.acc.delegate.impl;
 import com.acc.delegate.NotificationDelegate;
 import com.acc.model.Incident_Details;
 import com.acc.service.NotificationService;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,7 +49,26 @@ public class NotificationDelegateImpl implements NotificationDelegate {
 	@Override
 	public Map<String,String>  getMajorTrendSplunk() {
 		 return notificationService.getMajorTrendDataSplunk() ;
+	}
+
+	@Override
+	public String getApps() {
+		return notificationService.getApps() ;
+
 	}	
 	
+		@Override
+	public List<HashMap<String,String>>  getDetailBtnList(String inputDetail) {
+		 return notificationService.getDetailBtnService(inputDetail) ;
+	}	
+	
+	@Override
+	public List<HashMap<String,String>>  getAlertsBtnDt(String name, String pattern) {
+		 return notificationService.getAlertsBtnSrc(name,pattern) ;
+	}	
+	@Override
+	public Map<String,String>  getAppHealthDet() {
+		 return notificationService.getAppHealthDet() ;
+	}	
 	
 }

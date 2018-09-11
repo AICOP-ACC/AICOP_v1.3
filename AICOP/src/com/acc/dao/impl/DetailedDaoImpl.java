@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.acc.bean.AICOPConfigBean;
 import com.acc.bean.AICOPDetailsBean;
+import com.acc.bean.RfcDetailsBean;
+import com.acc.common.impl.ConnectSplunkServer;
 //import com.acc.bean.AICOPDetailsBean;
 import com.acc.dao.DetailedDao;
 
@@ -110,15 +112,18 @@ public class DetailedDaoImpl implements DetailedDao
 				
 			}
 			
-			for(AICOPConfigBean confb : list)
-			{
-				System.out.println(confb.getIcon());
-				System.out.println(confb.getDesc());
-				System.out.println(confb.getMin() + " -- " + confb.getMax());
-			}
 			
 		// TODO Auto-generated method stub
 		return list;
+	}
+	
+	//Soundariya - Detailed view RFC details ::10Sep18
+	@Override
+	public List<RfcDetailsBean> getRfcDetails(String applicationName){
+		ConnectSplunkServer connectsplunk = new ConnectSplunkServer();
+		List<RfcDetailsBean>  rfcDetailsBeanList= new ArrayList<RfcDetailsBean>(connectsplunk.getRfcDetails(applicationName));
+		
+		return rfcDetailsBeanList;
 	}
 
 }

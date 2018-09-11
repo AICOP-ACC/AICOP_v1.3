@@ -37,4 +37,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 	<bean id="notificationDelegate" class="com.acc.delegate.impl.NotificationDelegateImpl"></bean>
 	
+	
+	<bean class="com.acc.controller.DetailedController" scope="session">
+		
+		<property name="detailedDelegate" ref="detailedDelegate"></property>
+	</bean>
+	
 </beans>

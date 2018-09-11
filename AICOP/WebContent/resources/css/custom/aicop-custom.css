@@ -174,7 +174,11 @@ button{
 	 rect#PortINInitiatedinCRM {
     fill: red;
 }
-
+canvas{
+	background: white;
+	
+	
+}
 .notes-icon-bar{
 					width:28%;
 					background-color:#555;

@@ -37,9 +37,9 @@
 		$("#basic-example").remove();
 		$("#createflowchart").remove();
 		
-	//	////alert(div.innerHTML);
+	//	//////alert(div.innerHTML);
 		div.innerHTML=div.innerHTML+'<div id="stepOneFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
-		////alert(div.innerHTML);
+		//////alert(div.innerHTML);
 	var btn = document.getElementById("run"),
                     cd = document.getElementById("code"),
                     chart;
@@ -105,12 +105,12 @@
                       }
                     });
                     $('[id^=sub1]').click(function(){
-                      ////alert('info here');
+                      //////alert('info here');
                     });
 	 }
 	 else
 		 {
-		 //alert('in else');
+		 ////alert('in else');
 		 navigation.innerHTML=' <span onclick="loadInitialChart()">     <b>BSS</b></span>  >> <span onclick=loadFlowChart("Orders")><b>Orders</b></a> </span> ';
 		 
 		 var div=document.getElementById("businessFlow");
@@ -118,9 +118,9 @@
 			$("#stepTwoFlowChart").remove();
 			$("#stepOneFlowChart").remove();
 			
-		//	////alert(div.innerHTML);
+		//	//////alert(div.innerHTML);
 			div.innerHTML=div.innerHTML+'<div id="stepOneFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
-			////alert(div.innerHTML);
+			//////alert(div.innerHTML);
 		var btn = document.getElementById("run"),
 	                    cd = document.getElementById("code"),
 	                    chart;
@@ -186,7 +186,7 @@
 	                      }
 	                    });
 	                    $('[id^=sub1]').click(function(){
-	                      ////alert('info here');
+	                      //////alert('info here');
 	                    });
 		 
 		 }
@@ -194,7 +194,7 @@
 		 }
          function click(id)
          {
-        	 ////alert('going to click');
+        	 //////alert('going to click');
         	
         	 
          }
@@ -242,14 +242,14 @@ document.getElementById("navtitle").style.backgroundColor='#2A3F54';
 		 var code=flowone+"=>operation: "+flowone+"\n"+flowtwo+"=>operation: "+flowtwo+"\n"+flowthree+"=>operation: "+flowthree+"\n"+flowfour+"=>operation: "+flowfour+"\n"+flowfive+"=>operation: "+flowfive;
 var code1=flowone+"(right)->"+flowtwo+"(right)->"+flowthree+"(right)->"+flowfour+"(right)->"+flowfive;
 var codefinal=code+"\n"+code1;
-/* ////alert(codefinal); */
+/* //////alert(codefinal); */
 
 
 
                  var   chart = flowchart.parse(codefinal);
 				 var div=document.getElementById("canvas");
 				 div.innerHTML="";
-				/*  ////alert(chart); */
+				/*  //////alert(chart); */
                     chart.drawSVG('canvas', {
                       // 'x': 30,
                       // 'y': 50,
@@ -290,7 +290,7 @@ var codefinal=code+"\n"+code1;
                       }
                     });
                     $('[id^=sub1]').click(function(){
-                     /*  ////alert('info here'); */
+                     /*  //////alert('info here'); */
                     });
 
 		 
@@ -363,7 +363,7 @@ var codefinal=code+"\n"+code1;
 					 fontColor: 'black'
 				};
 			var ctx = document.getElementById('canvas').getContext('2d');
-			//alert(document.getElementById('canvas'));
+			////alert(document.getElementById('canvas'));
 			var barChart = new Chart(ctx, {
 				type: 'bar',
 				data: barChartData,
@@ -405,7 +405,7 @@ var codefinal=code+"\n"+code1;
 					var split1= data1[i].split("~");
 				    datasetVal1[i] = split1[1].replace(/\]/g, '');
 					datasetLabel1[i]=split1[0].replace(/\[/g, ''); 
-							//alert(datasetLabel1[i]);
+							////alert(datasetLabel1[i]);
 					}	
 				//	var rgbb = dynamicColors();
 					addData(barChart,YAxislabels1[incc], coloR[incc], datasetVal1,datasetLabel1);
@@ -526,7 +526,7 @@ var codefinal=code+"\n"+code1;
 				
 				]
 			};
-////alert("loading chart");
+//////alert("loading chart");
 			$("#chartContainer").CanvasJSChart(options);
 			
   
@@ -557,14 +557,14 @@ tagInput.tagsinput({
 	$("#basic-example").remove();
 	$("#createflowchart").remove();
 	$("#stepOneFlowChart").remove();
-//	////alert(div.innerHTML);
+//	//////alert(div.innerHTML);
 	 var navigation=document.getElementById("navigation");
 	 if(!navigation.innerHTML.includes('Porting Orders')){
-		 //alert('condition is true creating chart');
+		 ////alert('condition is true creating chart');
 		navigation.innerHTML=navigation.innerHTML+' >> <span onclick=loadNewFlowChart("")> <b>Porting Orders</b> </span> ';
 
 	div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>';
-	////alert(div.innerHTML);
+	//////alert(div.innerHTML);
 var btn = document.getElementById("run"),
           cd = document.getElementById("code1"),
           chart;
@@ -630,7 +630,7 @@ var btn = document.getElementById("run"),
             }
           });
           $('[id^=sub1]').click(function(){
-            ////alert('info here');
+            //////alert('info here');
           });
 	 }
 	 else
@@ -639,7 +639,7 @@ var btn = document.getElementById("run"),
 		 var div=document.getElementById("businessFlow");
 		 $("#stepTwoFlowChart").remove();
 		 div.innerHTML=div.innerHTML+'<div id="stepTwoFlowChart" style="width: 100%;height:316px;overflow-x:scroll;overflow-y:scroll;"></div>'+'<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="createflowchart">Maximize flow cahrt</button>';
-			////alert(div.innerHTML);
+			//////alert(div.innerHTML);
 		var btn = document.getElementById("run"),
 		          cd = document.getElementById("code1"),
 		          chart;
@@ -705,7 +705,7 @@ var btn = document.getElementById("run"),
 		            }
 		          });
 		          $('[id^=sub1]').click(function(){
-		            ////alert('info here');
+		            //////alert('info here');
 		          });
 		 
 		 }
@@ -870,7 +870,7 @@ var btn = document.getElementById("run"),
   {
 	  
 	  var div=document.getElementById("queueMonitoringOneSLA");
-	  ////alert(div+" "+div.innerHTML);
+	  //////alert(div+" "+div.innerHTML);
 	  //div.innerHTML="";
 	  div.innerHTML=' <div  id="queueMonitoringOneBar" style="height: 250px; width: 100%;"></div>';
 	  var dataPoints = [];
@@ -924,10 +924,10 @@ var btn = document.getElementById("run"),
   function loadSLAChart()
   {
 	  var div=document.getElementById("queueMonitoringOneSLA");
-	  ////alert(div+" "+div.innerHTML);
+	  //////alert(div+" "+div.innerHTML);
 	  //div.innerHTML="";
 	  div.innerHTML=' <canvas class="canvasDoughnutSLA"  style=" width: 100%; height: 250px;margin-top:10%;"></canvas>';
-	  ////alert("Loading SLA");
+	  //////alert("Loading SLA");
 	  var a={type:"doughnut",tooltipFillColor:"rgba(51, 51, 51, 0.55)",data:{labels:["Beyond 7 minutes","Within 7 minutes"],datasets:[{data:[30,70],backgroundColor:["#961223","#35911e"]}]},options:{legend:!1,responsive:!1}};
 	  $(".canvasDoughnutSLA").each(function(){var b=$(this);new Chart(b,a)})
 	  
@@ -1278,18 +1278,48 @@ function loadTMTQueuePostpaid() {
 	  	}
 	  	chart.render();
 	  }
-  
-  
-  function healthCheck()
+  // to be added for health check
+  function addToken()
   {
-	  
+	 // //alert("in add token");
+  jQuery.get("healthCheck.do", {
+          
+      }, function (data) {
+      	//////alert("apps "+data);
+    	  var apps="";
+          data = $.parseJSON(data);
+          for(var i=0;i<data.length;i++){
+        		
+        		////alert("apps "+apps+" "+data.length);
+        	  apps=apps+data[i]+",";
+        		//if(i+1>=data.length)
+        			//apps=apps+data[i];
+        	}
+          ////alert("apps "+apps);
+          dataapps=apps;
+          ////alert("adding token");
+          healthCheck(dataapps);
+         
+       // //alert('data-tokens="'+apps+'"');
+          
+      });
+  }
+  // to be added for health check
+  function healthCheck(dataapps)
+  {
+	 
+////alert("dataapps "+dataapps);
+	
+
+	 
+	 
 	  var healthcheckarray=[];
 	  var healthcheckarray1;
 
 	  var xmlhttp=new XMLHttpRequest();
 	  		
 	  		   xmlhttp.onreadystatechange=function(){
-	  		    ////alert(xmlhttp.status+" "+xmlhttp.readyState)
+	  		    //////alert(xmlhttp.status+" "+xmlhttp.readyState)
 	  		    if(xmlhttp.status==200&&xmlhttp.readyState==4){
 	  		     var a=xmlhttp.responseText;
 	  		    
@@ -1300,10 +1330,10 @@ function loadTMTQueuePostpaid() {
 	  			  healthcheckarray[c]="'"+d[c].replace('[','').replace(']','')+"'";
 	  			  
 	  			  }
-	  		  alert(healthcheckarray);
+	  		  ////alert(healthcheckarray);
 	  		
 	  		 
-	  		alert(healthcheckarray[0]);
+	  		////alert(healthcheckarray[0]);
 	  		    }
 	  		    }
 
@@ -1313,7 +1343,8 @@ function loadTMTQueuePostpaid() {
 
 
 
-
+	  		 document.getElementById("healthcheck").innerHTML='<input type="text" class="form-control"  value="'+dataapps+'" id="tokenfield" /><div id="apps"></div>';
+	  		  
 
 	      $('#tokenfield').tokenfield({
 	    	  
@@ -1323,8 +1354,9 @@ function loadTMTQueuePostpaid() {
 	                jQuery.get("healthCheck.do", {
 	                    query: request.term
 	                }, function (data) {
-	                	//alert(data);
+	                	
 	                    data = $.parseJSON(data);
+	                   ////alert("autocomplete "+data);
 	                    response(data);
 	                });
 	            },
@@ -1349,26 +1381,654 @@ function loadTMTQueuePostpaid() {
 	      var re = /\S+@\S+\.\S+/
 	      var valid = re.test(e.attrs.value)
 	      if (!valid) {
-	    	  var div=document.getElementById("apps");
-	    	  var button=document.getElementById(e.attrs.value);
-	    	  if(button==null)
-	    	{
-	    	  div.innerHTML=div.innerHTML+"<button id="+e.attrs.value+">"+e.attrs.value+"</button>"
-	    	}
+	    	  call_checkStatus(e.attrs.value);
+	    	  
 	      }
 	    }).on('tokenfield:removedtoken', function (e) {
-	    var div=document.getElementById(e.attrs.value);
+	     if(e.attrs.value.includes(' ')){
+	    var div=document.getElementById(e.attrs.value.replace(' ','_'));
 	    
 	      div.parentNode.removeChild(div);
+	     }
+	     else
+	    	 {
+	    	 var div=document.getElementById(e.attrs.value);
+	 	    
+		      div.parentNode.removeChild(div);
+	    	 }
 	    })
+	    get_all_status();
+	  
   }
   
   
   
-  function add_health()
+
+  
+  // to be added for health check
+  function call_checkStatus(app)
   {
-	  document.getElementById("healthcheck").innerHTML='<input type="text" class="form-control"  data-tokens="PGW,Helix" id="tokenfield" /><div id="apps"><button id="PGW">PGW</button><button id="Helix">Helix</button></div>';
+	  ////alert("in check status ");
+	  var xmlhttp=new XMLHttpRequest();
+		 var marquee1="sss";
+		 xmlhttp.onreadystatechange=function(){
+		 	if(xmlhttp.status==200&&xmlhttp.readyState==4){
+		 		var a=xmlhttp.responseText;
+		 		
+		 		var div=document.getElementById("apps");
+		    	  var button=document.getElementById(app);
+		    	  if(button==null)
+		    	{
+		    		  if(a=='"red"')
+		    	  div.innerHTML=div.innerHTML+'<button id='+app+' style=background:red>'+app+'</button>';
+		    		  else
+		    			  {
+		    			  div.innerHTML=div.innerHTML+'<button id='+app+' style=background:green>'+app+'</button>';
+		    			  }
+		    	  
+		    	}
+		 	}
+		 	}
+
+		 xmlhttp.open("GET", "checkStatus.do?app="+app);
+		 xmlhttp.send();
+  }
+  
+  // to be added for health check
+  function get_all_status()
+  {
+	  var request="";
+	  var response;
+          jQuery.get("healthCheck.do", {
+        	
+          }, function (data) {
+          	repsonse=data;
+          	response=$.parseJSON(data);
+        
+          	for(var i=0;i<response.length;i++){
+          		
+          		if(i==0)
+          			request=response[i];
+          		else
+          		request=request+"@"+response[i];
+          	}
+          	////alert(request);
+          		
+            jQuery.get("checkStatus.do", {
+            	
+              	app:request
+              }, function (data) {
+              	////alert(data);
+                var status=data.split("@"); 
+               request=request.split("@");
+               
+                var statusnew=[];
+                for(var i=0;i<status.length;i++){
+              		//////alert(status[i]);
+                	if(status[i]!='null'){
+            			//alert(request[i]+" "+request[i].includes(' '));
+                		if(request[i].includes(' ')){
+                			//alert(request[i]);
+                		var id=request[i].replace(' ','_')
+                	document.getElementById("apps").innerHTML=document.getElementById("apps").innerHTML+'<button id='+id+' style="background:'+status[i]+'">'+request[i]+'</button>';
+                	
+                		}
+                		else
+                			{
+                			document.getElementById("apps").innerHTML=document.getElementById("apps").innerHTML+'<button id='+request[i]+' style="background:'+status[i]+'">'+request[i]+'</button>';
+                			}
+                	}
+                		
+                }
+             
+              });
+              
+          });
+  }
+  
+  
+  function getHelixData()
+  {
+	  jQuery.get("getHelix.do", {
+	      	
+      	
+      }, function (data) {
+      	////alert(data);
+      
+        response=$.parseJSON(data);
+        var data=response[0];
+        var threshold=response[1];
+      //  var label=response[3];
+     
+       
+       
+      
+      
+     
+		var config = {
+			type: 'line',
+			 
+			data: {
+				labels: ['10.00', '10.05', '10.10', '10.15', '10.20', '10.25','10.30', '10.35', '10.40', '10.50'],
+				datasets: [{
+					label:'Redis',
+					backgroundColor: '#5fb760',
+					borderColor: '#5fb760',
+					data: data,
+					fill: false,
+					 lineTension: 0,
+					 pointRadius:0,
+					 borderWidth:1.6
+					 
+				}, {
+					label: 'Threshold',
+					fill: false,
+					backgroundColor: '#d8a958',
+					borderColor: '#d8a958',
+					data: threshold,
+					 pointRadius:0
+				}]
+			},
+			options: {
+			
+		              legend: {
+		                 position: 'bottom'
+		              },
+				responsive: true,
+				title: {
+					display: true,
+					
+				},
+				/*tooltips: {
+			    	callbacks: {
+			      	label: function(tooltipItem) {
+			        console.log(tooltipItem);
+			        
+			        	return tooltipItem.label+''+tooltipItem.yLabel;
+			        }
+			      }
+			    },*/
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: false,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						},
+					gridLines: {
+	                    color: "rgba(0, 0, 0, 0)",
+	                }
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Count'
+						},
+						gridLines: {
+		                    color: "rgba(0, 0, 0, 0)",
+		                }
+					}]
+				}
+			}
+		};
+
+	
+      
+		var ctx = document.getElementById('helix_chart');
+		////alert(ctx);
+		window.myLine = new Chart(ctx, config);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+     
+      });
 	  
+	
+  }
+  
+  
+  
+  function getTMT()
+  {
+	  
+	  jQuery.get("getTMT.do", {
+	      	
+	      	
+      }, function (data) {
+      	////alert(data);
+      
+        response=$.parseJSON(data);
+        var data=response[0];
+        var threshold=response[1];
+        var data1=response[2];
+      //  var label=response[3];
+     
+       
+       
+      
+      
+     
+		var config = {
+			type: 'line',
+			 
+			data: {
+				labels: ['10.00', '10.05', '10.10', '10.15', '10.20', '10.25','10.30', '10.35', '10.40', '10.50'],
+				datasets: [{
+					label:'CTBI',
+					backgroundColor: '#5fb760',
+					borderColor: '#5fb760',
+					data: data,
+					fill: false,
+					 lineTension: 0,
+					 pointRadius:0,
+					 borderWidth:1.6
+					 
+				}, {
+					label: 'NFT',
+					fill: false,
+					backgroundColor: '#d8a958',
+					borderColor: '#d8a958',
+					data: data1,
+					lineTension: 0,
+					 pointRadius:0,
+					 borderWidth:1.6
+				},
+				
+				{
+					label: 'Threshold',
+					fill: false,
+					backgroundColor: '#f7c267',
+					borderColor: '#f7c267',
+					data: threshold,
+					
+					 pointRadius:0,
+					 borderWidth:1.6
+				}]
+			},
+			options: {
+			
+		              legend: {
+		                 position: 'bottom'
+		              },
+				responsive: true,
+				title: {
+					display: true,
+					
+				},
+				/*tooltips: {
+			    	callbacks: {
+			      	label: function(tooltipItem) {
+			        console.log(tooltipItem);
+			        
+			        	return tooltipItem.label+''+tooltipItem.yLabel;
+			        }
+			      }
+			    },*/
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: false,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						},
+					gridLines: {
+	                    color: "rgba(0, 0, 0, 0)",
+	                }
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Count'
+						},
+						gridLines: {
+		                    color: "rgba(0, 0, 0, 0)",
+		                }
+					}]
+				}
+			}
+		};
+
+	
+      
+		var ctx = document.getElementById('chartContainerTMT');
+	//	//alert(ctx);
+		window.myLine = new Chart(ctx, config);
+      });
+  }
+  
+  function getMTS()
+  {
+	  
+	  jQuery.get("getTMT.do", {
+	      	
+	      	
+      }, function (data) {
+      	////alert(data);
+      
+        response=$.parseJSON(data);
+        var data=response[0];
+        var threshold=response[1];
+        var data1=response[2];
+      //  var label=response[3];
+		var config = {
+			type: 'line',
+			 
+			data: {
+				labels: ['10.00', '10.05', '10.10', '10.15', '10.20', '10.25','10.30', '10.35', '10.40', '10.50'],
+				datasets: [{
+					label:'EAI',
+					backgroundColor: '#5fb760',
+					borderColor: '#5fb760',
+					data: data,
+					fill: false,
+					 lineTension: 0,
+					 pointRadius:0,
+					 borderWidth:1.6
+					 
+				}, {
+					label: 'EAP',
+					fill: false,
+					backgroundColor: '#d8a958',
+					borderColor: '#d8a958',
+					data: data1,
+					 pointRadius:0,
+					 borderWidth:1.6
+					 
+				},
+				
+				{
+					label: 'Threshold',
+					fill: false,
+					backgroundColor: '#f7c267',
+					borderColor: '#f7c267',
+					data: threshold,
+					 pointRadius:0,
+					 borderWidth:1.6
+				}]
+			},
+			options: {
+			
+		              legend: {
+		                 position: 'bottom'
+		              },
+				responsive: true,
+				title: {
+					display: true,
+					
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: false,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						},
+					gridLines: {
+	                    color: "rgba(0, 0, 0, 0)",
+	                }
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Count'
+						},
+						gridLines: {
+		                    color: "rgba(0, 0, 0, 0)",
+		                }
+					}]
+				}
+			}
+		};
+      
+		var ctx = document.getElementById('chartContainerMTS');
+		////alert(ctx);
+		window.myLine = new Chart(ctx, config);
+     
+      });
+	   
 	  
 	  
   }
+  
+  
+  
+  function getOrderData()
+  {
+	 // //alert("get Order")
+	  jQuery.get("getOrders.do", {
+	      	
+	      	
+      }, function (data) {
+      	////alert(data);
+      
+        response=$.parseJSON(data);
+        var data=response[0];
+        var threshold=response[1];
+        
+        //alert(data+" "+response);
+        //var data1=response[2];
+      //  var label=response[3];
+     
+       
+       
+      
+      
+     
+        var chartData = {
+    			labels: ['10.00 AM', '10.10 AM', '10.20 AM', '10.30 AM', '10.40 AM', '10.50 AM', '10.60 AM'],
+    			datasets: [{
+    				type: 'line',
+    				label: 'Completed',
+    				borderColor: 'Orange',
+    				borderWidth: 2,
+    				fill: false,
+    				data: data,
+    				lineTension: 0,
+					 pointRadius:0
+    			}, {
+    				type: 'bar',
+    				label: 'Total',
+    				backgroundColor: 'blue',
+    				data: threshold,
+    				borderColor: 'white',
+    				borderWidth: 2
+    			}]
+
+    		};
+    
+    			var ctx = document.getElementById('queueMonitoringTwo').getContext('2d');
+    			
+    		//	//alert("area "+ctx);
+    			window.myMixedChart = new Chart(ctx, {
+    				type: 'bar',
+    				data: chartData,
+    				options: {
+
+  		              legend: {
+  		                 position: 'bottom'
+  		              },
+    					responsive: true,
+    					title: {
+    						display: true,
+    						
+    					},
+    					scales: {
+    						xAxes: [{
+    							
+    							scaleLabel: {
+    								display: true,
+    								labelString: 'Month'
+    							},
+    						gridLines: {
+    		                    color: "rgba(0, 0, 0, 0)",
+    		                }
+    						}],
+    						yAxes: [{
+    							
+    							scaleLabel: {
+    								display: true,
+    								labelString: 'Count'
+    							},
+    							gridLines: {
+    			                    color: "rgba(0, 0, 0, 0)",
+    			                }
+    						}]
+    					}
+    					/*tooltips: {
+    						mode: 'index',
+    						intersect: true
+    					}*/
+    				}
+    			});
+    		
+	  
+  });
+  }
+  
+  
+  
+  function getBilling()
+  {
+	 // //alert("get Order")
+	  jQuery.get("getOrders.do", {
+	      	
+	      	
+      }, function (data) {
+      	////alert(data);
+      
+        response=$.parseJSON(data);
+        var data=response[0];
+        var threshold=response[1];
+        
+      //  //alert(data+" "+response);
+        //var data1=response[2];
+      //  var label=response[3];
+     
+       
+       
+      
+      
+     
+        var chartData = {
+    			labels: ['10.00 AM', '10.10 AM', '10.20 AM', '10.30 AM', '10.40 AM', '10.50 AM', '10.60 AM'],
+    			datasets: [{
+    				type: 'line',
+    				label: 'Completed',
+    				borderColor: 'Orange',
+    				borderWidth: 2,
+    				fill: false,
+    				data: data,
+    				lineTension: 0,
+					 pointRadius:0
+    			}, {
+    				type: 'bar',
+    				label: 'Total',
+    				backgroundColor: 'blue',
+    				data: threshold,
+    				borderColor: 'white',
+    				borderWidth: 2
+    			}]
+
+    		};
+    
+    			var ctx = document.getElementById('queueMonitoringThree').getContext('2d');
+    			
+    		//	//alert("area "+ctx);
+    			window.myMixedChart = new Chart(ctx, {
+    				type: 'bar',
+    				data: chartData,
+    				options: {
+
+  		              legend: {
+  		                 position: 'bottom'
+  		              },
+    					responsive: true,
+    					title: {
+    						display: true,
+    						
+    					},
+    					scales: {
+    						xAxes: [{
+    							
+    							scaleLabel: {
+    								display: true,
+    								labelString: 'Month'
+    							},
+    						gridLines: {
+    		                    color: "rgba(0, 0, 0, 0)",
+    		                }
+    						}],
+    						yAxes: [{
+    							
+    							scaleLabel: {
+    								display: true,
+    								labelString: 'Count'
+    							},
+    							gridLines: {
+    			                    color: "rgba(0, 0, 0, 0)",
+    			                }
+    						}]
+    					}
+    					/*tooltips: {
+    						mode: 'index',
+    						intersect: true
+    					}*/
+    				}
+    			});
+    		
+	  
+  });
+  }
+  
+  function getSelecteTimerRange(){
+	  $("#timeRangeOM a").click(function(e){
+		    var selText = $(this).text();
+		    document.getElementById("selectedTime").innerHTML=selText;
+		});
+	  
+	  $("#timeRangeOP a").click(function(e){
+		    var selText = $(this).text();
+		    document.getElementById("selectedTimeOP").innerHTML=selText;
+		});
+	  
+	  $("#timeRangeBill a").click(function(e){
+		    var selText = $(this).text();
+		    document.getElementById("selectedTimeBill").innerHTML=selText;
+		});
+	  
+	 $("#timeRangeHelix a").click(function(e){
+		    var selText = $(this).text();
+		    document.getElementById("selectedTimeHelix").innerHTML=selText;
+		});
+	 $("#timeRangeTMT a").click(function(e){
+		    var selText = $(this).text();
+		    document.getElementById("selectedTimeTMT").innerHTML=selText;
+		});
+	  $("#timeRangeMTS a").click(function(e){
+		    var selText = $(this).text();
+		    document.getElementById("selectedTimeMTS").innerHTML=selText;
+		});
+  }
+  

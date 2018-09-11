@@ -1,5 +1,6 @@
 package com.acc.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +62,27 @@ public class NotificationServiceImpl implements NotificationService{
 		// TODO Auto-generated method stub
 		return notificationDao.getMajorTrendSplunk();
 	}
+
+	@Override
+	public String getApps() {
+		return notificationDao.getApps();
+	}
+		// kvp code
+	@Override
+	public List<HashMap<String,String>>  getDetailBtnService(String inputDetail) {
+		// TODO Auto-generated method stub
+		return notificationDao.getDetailBtnDao(inputDetail);
+	}
 	
+	@Override
+	public List<HashMap<String,String>>  getAlertsBtnSrc(String name,String pattern) {
+		// TODO Auto-generated method stub
+		return notificationDao.getAlertsBtnDao(name, pattern);
+	}
 	
+	@Override
+	public Map<String,String>  getAppHealthDet() {
+		// TODO Auto-generated method stub
+		return notificationDao.getAppHealthDet();
+	}
 }

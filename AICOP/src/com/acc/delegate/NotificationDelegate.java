@@ -12,5 +12,11 @@ public interface NotificationDelegate {
 	List<Incident_Details> getGraphdata() ;
 	List<Incident_Details> getNotificationDatafromSplunk();
 	Map<String, String> getMajorTrendSplunk();
+	String getApps();
 	String getSourceInfo(String viewField);
+	
+	// kvp code
+	List<HashMap<String,String>> getDetailBtnList(String inputDetail);
+	List<HashMap<String,String>> getAlertsBtnDt(String name, String pattern);
+	Map<String, String> getAppHealthDet();
 }

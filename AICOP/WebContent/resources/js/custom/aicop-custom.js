@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	
-	$('#emailContentArea').hide();
+	populateTabsInDetailedView();
+$('#emailContentArea').hide();
 $(".open-button").on("click", function() {
   $(this).closest('.collapse-group').find('.collapse').collapse('show');
 });
@@ -1036,10 +1037,15 @@ $('#sendMail').on("click", function (e) {
 
 	$.ajax(sendEmail).done(function (response) {
 	  console.log(response);
-	  console.log("Email sent....")
+	  console.log("Email sent....");
+	  $('#emailContentArea').hide();
+	  $('#dynamicModal').modal('show');
+		$('#dynamicMsg').html("Your Email has been sent!");
+		
 	});
 
 	});
+
 
 
 $('#actionStatus').on("click","a",function(){
@@ -1066,16 +1072,253 @@ if(window.location.href.indexOf("executiveView") > -1)
      $("#pagesNav").toggle('nav-collapse');
      $("#executiveViewNav").addClass("active");
 }
+
+// kvp code
+
 if(window.location.href.indexOf("detailedView") > -1) 
 {
 	
      $("#attiddetail").toggle();
      $("#pagesNav").toggle('nav-collapse');
      $("#detailedViewNav").addClass("active");
+     
+	 $("#portMgmtNav").toggle();
+     $("#orderMgmtNav").toggle();
+     $("#billingMgmtNav").toggle();
+     
+     
+     $("#mobileservice").hide();
+     $("#fixservice").hide();
+     
+    
 }
+$("#portMgmtNav").on("click",function() {
+	 $("#mobileservice").show();
+	 $("#fixservice").show();
+	 $("#portinserv").show();
+	 $("#portoutserv").show();
+	 // $("#portinserv").hide();
+	 //$("#portoutserv").hide();
+	 
+});
+
+
+
+$("#portin").on("click",function() {
+	alert("aa");
+	 $("#detailedViewNav").removeClass("active");
+	 $("#portout").removeClass("active");
+	 $("#portin").addClass("active");
+	 var inputDetail = "PI";
+	 var inputPtrn = "~ALL~PN~";
+	
+	//  displayAlerts(inputDetail, inputPtrn);
+	 displayBtnMethod(inputDetail);
+	
+});
+
+$("#portout").on("click",function() {
+	alert("aa");
+	 $("#detailedViewNav").removeClass("active");
+	 $("#portin").removeClass("active");
+	 $("#portout").addClass("active");
+	 var inputDetail = "PO";
+	 displayBtnMethod(inputDetail);
+	
+});
+
+$("#billingMgmtNav").on("click",function() {
+	alert("aa");
+	 $("#detailedViewNav").removeClass("active");
+	 $("#portin").removeClass("active");
+	 $("#portout").removeClass("active");
+	 $("#billmgmtnavbar").addClass("active");
+	 var inputDetail = "BILLINGFD";
+	 displayBtnMethod(inputDetail);
+	
+});
+
+
+
+function displayBtnMethod(inputDetail)
+{
+	 alert("inspan");
+	  var labels;
+	  var partsOfStr;
+	  var partOfClr;
+	  document.getElementById("dynamicBtnTitle").innerHTML="";
+	  $.ajax({
+         url: "getDetailBtn.do",
+         type: "POST",
+         data: { name: inputDetail },
+         
+         success: function (result) {
+       	  alert("success");
+       	  var json_obj = $.parseJSON(result);//parse JSON
+       	  console.log("json_obj.length - " + json_obj.length);
+       	  
+       	  for(var i=0; i<json_obj.length; i++) {
+       		    console.log( " json " +json_obj[i]);
+       		    if(i == 0)
+       		    	partOfClr = json_obj[i].toString().split(',');
+       		    else
+       		    	partsOfStr  = json_obj[i].toString().split(',');
+       		    
+       		}
+       	  
+       	  for (var key in partsOfStr) {
+       		  
+       		        console.log(key + " -> " + partsOfStr[key]);
+       		        document.getElementById('dynamicBtnTitle').innerHTML +="<button type='button' id='"+partsOfStr[key]+"'"+" data-set-token='Btrxn' data-value='"+partsOfStr[key]+"' data-unset-token='BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW' class='btn Bflow'>"+partsOfStr[key]+"</button>&nbsp;&nbsp;";
+       		        $('#'+partsOfStr[key]).css("background",""+partOfClr[key]+"");
+   					$('#'+partsOfStr[key]).css("box-shadow","none");
+   					$('#'+partsOfStr[key]).css("color","white");
+   					$('#'+partsOfStr[key]).css("cursor","pointer");
+   					$('#'+partsOfStr[key]).css("font-size","11px");
+   					$('#'+partsOfStr[key]).css("display","inline-block");
+   					$('#'+partsOfStr[key]).css("border-radius","12px");
+       		}
+       	
+         }
+       
+     });
+}
+
+
+function displayAlerts(inputDetail, inputPtrn)
+{
+	 alert("inside alerts ");
+	  var labels;
+	  var partsOfStr;
+	  var partOfClr;
+	  
+	  $.ajax({
+        url: "getAlertsBtn.do",
+        type: "POST",
+        data: { name: inputDetail, ptrn: inputPtrn },
+        
+        success: function (result) {
+      	  alert("success");
+      	  var json_obj = $.parseJSON(result);//parse JSON
+      	  console.log("json_obj.length - " + json_obj.length);
+      	  
+      	  for(var i=0; i<json_obj.length; i++) {
+      		    console.log( " json " +json_obj[i]);
+      		    if(i == 0)
+      		    	partOfClr = json_obj[i].toString().split(',');
+      		    else
+      		    	partsOfStr  = json_obj[i].toString().split(',');
+      		    
+      		}
+      	  
+      	  for (var key in partsOfStr) {
+      		  
+      		        console.log(key + " -> " + partsOfStr[key]);
+      		}
+      	
+        }
+      
+    });
+
+	
+}
+
+
+$(function() {
+    $(document).on("click", '#CDRG', function() {
+        alert("You have just clicked on ");
+        
+        document.getElementById("imgdisp").innerHTML="<img src='resources/images/BI_WL_CDRG.JPG' />";
+        
+    });
+    $(document).on("click", '#OA', function() {
+        alert("You have just clicked on ");
+        
+        document.getElementById("imgdisp").innerHTML="<img src='resources/images/BI_WL_OA.JPG' />";
+        
+    });
+    $(document).on("click", '#PR', function() {
+        alert("You have just clicked on ");
+        
+        document.getElementById("imgdisp").innerHTML="<img src='resources/images/BI_WL_PR.JPG' />";
+        
+    });
+    $(document).on("click", '#BIP', function() {
+        alert("You have just clicked on ");
+        
+        document.getElementById("imgdisp").innerHTML="<img src='resources/images/BI_WL_BIP.JPG' />";
+        
+    });
+    $(document).on("click", '#BIF', function() {
+        alert("You have just clicked on ");
+        
+        document.getElementById("imgdisp").innerHTML="<img src='resources/images/BI_WL_BIF.JPG' />";
+        
+    });
+    
+});
+
+
+
+
 
 $("#emailNotes").on('click',function(){
 	$('#emailContentArea').show();
 	
 })
+$('#discardMail').on("click", function (e) {
+	
+	 $('#emailContentArea').hide();
+});
+
+
+
+function populateTabsInDetailedView(){
+	console.log("populateTabsInDetailedView");
+	getRfcDetails("OPOM");
+}
+
+function getRfcDetails(appName){
+	console.log("getRfcDetails");
+	$.ajax({
+		url : "/AICOP/getRfcDetailsForApp.do",
+		contentType : "application/json",
+		type : "POST",
+		data : JSON.stringify(appName),
+			success : function(data){
+			var rfcDetailsTable = $('#rfcDetailsTable').DataTable({
+				    "bPaginate": true,
+				    "bLengthChange": false,
+				    "bFilter": true,
+				    "bInfo": false,
+				    "bAutoWidth": true,
+				    /*"aoColumnDefs" : [
+						{ "sWidth": "222px","text-align": "left", "aTargets":[0]},
+						{ "sWidth": "326px","text-align": "left", "aTargets":[1]},
+						{ "sWidth": "168px","text-align": "left", "aTargets":[2]}
+						
+					]*/
+			       });
+				   
+				
+			rfcDetailsTable.row.add([
+				data.rfcId,
+				data.impactedApplication,
+				data.title,
+				data.description,
+				data.startDt,
+				data.endDt,
+				data.impactedNodes,
+				data.requester,
+				data.status
+				     ]).draw(false);
+				
+				
+			},
+			error : function(){
+				console.log("error")
+			}
+		
+	});
+}
 });

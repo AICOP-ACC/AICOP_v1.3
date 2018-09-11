@@ -2,10 +2,19 @@ rect{
     fill:white;
 }
 
+#svg2{
+	
+    position: relative;
+    left: 100;
+    top: 15%;
+    background-color:white;
+    z-index: 6;
+}
+
 #svgEdit{
     position: relative;
-    left: 50px;
-    top: 10%;
+    left: 100;
+    top: 15%;
     background-color:white;
     z-index: 6;
 }
@@ -187,3 +196,16 @@ rect{
     stroke-width:2;
     opacity:1;
 }
+
+
+line{
+    stroke-dasharray: 10;
+    stroke-dashoffset: 50000;
+    animation: dash 20s linear infinite forwards;
+}
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

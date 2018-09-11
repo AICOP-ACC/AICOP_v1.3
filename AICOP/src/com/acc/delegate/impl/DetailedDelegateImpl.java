@@ -2,12 +2,17 @@ package com.acc.delegate.impl;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.acc.bean.AICOPConfigBean;
+import com.acc.bean.RfcDetailsBean;
+
 import com.acc.delegate.DetailedDelegate;
 import com.acc.service.DetailedService;
 
 public class DetailedDelegateImpl implements DetailedDelegate
 {
+	final static Logger logger = Logger.getLogger(DetailedDelegateImpl.class);
 
 	private DetailedService detailedService;
 
@@ -26,6 +31,13 @@ public class DetailedDelegateImpl implements DetailedDelegate
 		System.out.println(listres.size());
 		
 		return listres;
+	}
+
+
+	@Override
+	public List<RfcDetailsBean> getRfcDetails(String applicationName) {
+		logger.debug("getRfcDetails delegate...");
+		return detailedService.getRfcDetails(applicationName);
 	}
 	
 

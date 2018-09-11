@@ -148,4 +148,72 @@ public class NotificationDaoImpl implements NotificationDao {
 		System.out.println(connectsplunk.getusername()) ;
 		return connectsplunk.getSplunkMajorIncidentData();
 	}
+
+	@Override
+	public String getApps() {
+		 Configuration configuration = null;
+		 ServiceRegistry serviceRegistry = null;
+		 StringBuilder queryBuffer = null;
+		 Map<String,String> routerMap = null;
+		 String source = null;
+	    try {
+	        
+	    	configuration = new Configuration();
+	        System.out.println("configuration"+configuration);
+	    configuration.configure("hbm.cfg.xml");
+	    System.out.println("configuration-->"+configuration);
+	     serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();   
+	    
+	    System.out.println("serviceRegistry"+serviceRegistry);
+	     sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+	      queryBuffer = new StringBuilder();
+			queryBuffer.append("Select * from aicop_apps");
+			
+			System.out.println(queryBuffer.toString());
+			Session session = sessionFactory.openSession();
+		/*	UserInfo userInfo = (UserInfo) session.get(UserInfo.class,userBean.getUserId());*/
+			Query qr = session.createSQLQuery(queryBuffer.toString());
+					
+			
+			String resultList = qr.list().toString();
+			System.out.println("result set "+resultList);
+			routerMap = new HashMap<String,String>();
+	/*	
+		for(RouterInfoBean routerInfoBean : resultList) {
+			routerMap.put(routerInfoBean.getViewFiledName(), routerInfoBean.getDataSource());
+			if(viewField.equals(routerInfoBean.getViewFiledName())) {
+				source = routerInfoBean.getDataSource();
+			}
+		}*/
+			session.close();
+			return resultList;
+	}
+	    catch(Exception e)
+	    {
+	    	e.printStackTrace();
+	    	return null;
+	    	
+	    }
+}
+// kvp code	
+	@Override
+	public List<HashMap<String,String>> getDetailBtnDao(String inputDetail) {
+		ConnectSplunkServer connectsplunk = new ConnectSplunkServer();
+		System.out.println(connectsplunk.getusername());
+		return connectsplunk.getSplunkDetailButtonsList(inputDetail);
+	}
+	
+	@Override
+	public List<HashMap<String,String>> getAlertsBtnDao(String name, String pattern) {
+		ConnectSplunkServer connectsplunk = new ConnectSplunkServer();
+		System.out.println(connectsplunk.getusername());
+		return connectsplunk.getAlertsDetailList(name, pattern);
+	}
+
+	@Override
+	public Map<String, String> getAppHealthDet() {
+		ConnectSplunkServer connectsplunk = new ConnectSplunkServer();
+		System.out.println(connectsplunk.getusername()) ;
+		return connectsplunk.getSplunkAppHealth();
+	}
 }

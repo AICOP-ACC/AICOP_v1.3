@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="resources/css/custom/chart.css">
 <style>
 
- .checkbtn{
+/*  .checkbtn{
     background-color: #4CAF50;
     border: none;
     color: white;   
@@ -19,14 +19,19 @@
     text-transform: uppercase;
     border-radius: 8px;
 }
-
+ */
 #bodyContent{
  height: 250px;
+}
+#bodyContentBtn{
+height: 240px;
+ overflow-y:scroll;
+ margin-bottom:10px;
 }
 
 	 
 </style>
- <!-- <script type="text/javascript" src="resources/js/package/jquery.min.js"></script> -->
+
  <script src=https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.3/flowchart.js></script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
  <script type="text/javascript" src="resources/js/custom/businessFlow.js"></script>
@@ -56,44 +61,30 @@
       </div>
     </div>
     
-    <div class="col-md-4" >
+    <div class="col-md-5" >
       <div class="card ">
         <div class="card-header card-header-icon card-header-info "  style="background-color: #e6adb2;">
           <h4 class="card-title">Business Transactions
            <!--  <small class="description">Notifications</small> -->
           </h4>
         </div>
-        <div class="card-body" id="bodyContent">
-          <ul class="nav nav-pills nav-pills-warning" role="tablist">  
+        <div class="card-body" id="bodyContentBtn">
+          <!-- <ul class="nav nav-pills nav-pills-warning" role="tablist">   -->
           <!-- <span class="dynamicButtonBTrxn"/> -->
+        
+        <!--  <span class="dynamicButtonBTrxn">btnlist
+         </span> -->
          
-         	<button type="button" id="PN" data-set-token="Btrxn" data-value="PN" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn">PN</button> &nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PNREC</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PNREJ</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PWN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PWNCON</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PWNREJ</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCNCON</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCNREJ</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCCOM</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PORTMSN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >BPCN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCCOM</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PORTMSN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >BPCN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCCOM</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PORTMSN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >BPCN</button>&nbsp;&nbsp;
-         	<button type="button" id="PNREC" data-set-token="Btrxn" data-value="PNREC" data-unset-token="BMetrics,BUSINESSFLOW,INFRA,APPLICATIONFLOW,INC,TC,RFCDTLS,TECHOBJ,CHGMGMT,NOTBUSINESSFLOW" class="checkbtn" >PCCOM</button>&nbsp;&nbsp;
-           
-          </ul>
+         <span class="dynamicButtonTrxn" id="dynamicBtnTitle">
+         </span>
+         	
+         <!--  </ul> -->
           
         </div>
       </div>
     </div>
     
-    <div class="col-md-5" >
+    <div class="col-md-4" >
       <div class="card ">
         <div class="card-header card-header-icon card-header-info "  style="background-color: #e6adb2;">
           <h4 class="card-title">Alerts
@@ -117,7 +108,6 @@
                 <i class="material-icons">history</i>
               </a>
             </li>
-             </ul> 
           <div class="tab-content tab-space">
             <div class="tab-pane active" id="openMajors">
             
@@ -136,7 +126,8 @@
             </div>
         
           </div>
-                  
+          
+          </ul>          
           
           
         </div>
@@ -158,7 +149,7 @@
         <!-- Business Flow Diagram -->
         <div class="detLink">
         <br/><br/>
-        <svg width="1000" height="500" id="svgEdit"  transform="scale(1.14)">
+        <svg width="1100" height="500" id="svgEdit"  transform="scale(1.14) translate(100,0)">
         <!--First phase-->
         <g id="firstPhase">
              <rect x="81" y="50" width="130" height="180" class="rectmain" id="CRMBCCRect"/>
@@ -247,37 +238,39 @@
           <defs>
               <marker id="arrowhead" markerWidth="10" markerHeight="7" 
               refX="5" refY="3.5" orient="auto">
-                <polygon id="point" points="0 0, 10 3.5, 0 7" />
+                <polygon id="point" points="0 0, 10 3.5, 0 7" stroke="white" />
               </marker>
           </defs>
                   <line id="line1" x1="192" y1="105" x2="285" y2="105" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                  <line x1="405" y1="105" x2="655" y2="105" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="775" y1="105" x2="840" y2="105" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="295" y1="180" x2="202" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="295" y1="180" x2="202" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="485" y1="180" x2="415" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="665" y1="180" x2="592" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="405" y1="260" x2="655" y2="260" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="775" y1="260" x2="840" y2="260" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="775" y1="405" x2="840" y2="405" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="665" y1="327" x2="595" y2="327" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="490" y1="327" x2="415" y2="327" stroke="black"stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="295" y1="390" x2="205" y2="390" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="240" y1="180" x2="240" y2="370" stroke="black" stroke-width="1.5"/>
-                  <line x1="900" y1="180" x2="785" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="900" y1="135" x2="900" y2="181" stroke="black" stroke-width="1.5"/>
-                  <line x1="900" y1="327" x2="785" y2="327" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="900" y1="285" x2="900" y2="328" stroke="black" stroke-width="1.5"/>
-                  <line x1="535" y1="240" x2="413" y2="240" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
-                  <line x1="535" y1="229" x2="535" y2="241" stroke="black" stroke-width="1.5"/>
-                  <line x1="720" y1="470" x2="150" y2="470" stroke="black" stroke-width="1.5"/>
-                  <line x1="150" y1="430" x2="150" y2="471" stroke="black" stroke-width="1.5"/>
-                  <line x1="720" y1="471" x2="720" y2="445" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                  <line x1="198" y1="370" x2="240" y2="370" stroke="black" stroke-width="1.5"/>
-            	  <line x1="240" y1="320" x2="295" y2="320" stroke="black" stroke-width="1.5"/>
-            	  <line x1="240" y1="300" x2="205" y2="300" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-              	  <line x1="538" y1="390" x2="415" y2="390" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"></line>
-                  <line x1="538" y1="375" x2="538" y2="391" stroke="black" stroke-width="1.5"/>
+                  <line id="line2" x1="405" y1="105" x2="655" y2="105" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line3" x1="775" y1="105" x2="840" y2="105" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line4" x1="240" y1="180" x2="202" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line5" x1="240" y1="180" x2="295" y2="180" stroke="black" stroke-width="1.5"" />
+                  <line id="line6" x1="485" y1="180" x2="415" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line7" x1="665" y1="180" x2="592" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line8" x1="405" y1="260" x2="655" y2="260" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line9" x1="775" y1="260" x2="840" y2="260" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line10" x1="775" y1="405" x2="840" y2="405" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line11" x1="665" y1="327" x2="595" y2="327" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line13" x1="490" y1="327" x2="415" y2="327" stroke="black"stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line14" x1="295" y1="390" x2="205" y2="390" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line15" x1="240" y1="300" x2="240" y2="180" stroke="black" stroke-width="1.5"/>
+                  <line id="line31" x1="240" y1="320" x2="240" y2="300" stroke="black" stroke-width="1.5"/>
+                  <line id="line30" x1="240" y1="370" x2="240" y2="320" stroke="black" stroke-width="1.5"/>
+                  <line id="line16" x1="900" y1="180" x2="785" y2="180" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line17" x1="900" y1="135" x2="900" y2="181" stroke="black" stroke-width="1.5"/>
+                  <line id="line18" x1="900" y1="327" x2="785" y2="327" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line19" x1="900" y1="285" x2="900" y2="328" stroke="black" stroke-width="1.5"/>
+                  <line id="line20" x1="535" y1="240" x2="413" y2="240" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+                  <line id="line21" x1="535" y1="229" x2="535" y2="241" stroke="black" stroke-width="1.5"/>
+                  <line id="line22" x1="150" y1="470" x2="720" y2="470" stroke="black" stroke-width="1.5"/>
+                  <line id="line23" x1="150" y1="430" x2="150" y2="471" stroke="black" stroke-width="1.5"/>
+                  <line id="line24" x1="720" y1="471" x2="720" y2="445" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                  <line id="line25" x1="198" y1="370" x2="240" y2="370" stroke="black" stroke-width="1.5"/>
+            	  <line id="line26" x1="295" y1="320" x2="240" y2="320" stroke="black" stroke-width="1.5"/>
+            	  <line id="line27" x1="240" y1="300" x2="205" y2="300" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+              	  <line id="line28" x1="538" y1="390" x2="415" y2="390" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"></line>
+                  <line id="line29" x1="538" y1="375" x2="538" y2="391" stroke="black" stroke-width="1.5"/>
              <g>
              <text x="240" y="112" font-size="20" fill="black" text-anchor="middle" class="textClass">>></text>
              <a href="detailedListView.do">
@@ -311,6 +304,10 @@
 				</div>
          
          <!-- Body end -->
+         
+         <div id="imgdisp" >
+         
+         </div>
          
         </div>
       </div>

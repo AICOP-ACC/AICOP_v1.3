@@ -363,7 +363,25 @@
               </div>
              <!-- Error Modal Ends -->
               
-              
+              <!-- Dynamic Content Modal Starts-->
+              <div class="modal fade modal-mini modal-primary" id="dynamicModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-small">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title">Info</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="dynamicMsg" class="text-success"></p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Dynamic Content Modal Ends -->
               
               
         <div class="card-body">
@@ -521,6 +539,8 @@ RCA : Initial analysis suggest issue is due to the stuck threads found in MDSPRD
 							      
 							    </div>
 							    <button id="sendMail" type="button" class="btn btn-success btn-round">Send</button>
+							    <button id="discardMail" type="button" class="btn btn-danger btn-round">Discard</button>
+							    
 							  </form>
 
         </span>
@@ -667,10 +687,10 @@ RCA : Initial analysis suggest issue is due to the stuck threads found in MDSPRD
 		                  <div class="tab-content">
 		                  <div class="tab-pane active" id="changeDetail">
 		                   <div class="table-responsive">
-		                  <table id="rfcDetails" class="table table-striped">
+		                  <table id="rfcDetailsTable" class="table table-striped">
 				              <thead>
 				                <tr>
-				                  <!-- <th class="text-center">#</th> -->
+				                  
 				                  <th>RFC ID</th>
 				                  <th>Impacted Applications</th>
 				                  <th>Title</th>
@@ -683,7 +703,7 @@ RCA : Initial analysis suggest issue is due to the stuck threads found in MDSPRD
 				                </tr>
 				              </thead>
 				              <tbody>
-				                <tr>
+				               <!--  <tr>
 				                	<td>C00162669</td>
 				                	<td>OPOM</td>
 				                	<td>MCT R1801.1 Production Rollin.</td>
@@ -694,7 +714,7 @@ RCA : Initial analysis suggest issue is due to the stuck threads found in MDSPRD
 				                	<td>cp547489</td>
 				                	<td>Completed</td>
 				                
-				                </tr>
+				                </tr> -->
 				              </tbody>
 				              
 				            </table>
